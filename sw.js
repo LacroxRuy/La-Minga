@@ -1,4 +1,4 @@
-const CACHE = "la-minga-catalogo-v3";
+const CACHE = "la-minga-catalogo-v4";
 const ASSETS = [
   "./",
   "./index.html",

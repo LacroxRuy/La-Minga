@@ -5,7 +5,8 @@ window.PRODUCTOS = [
     "nombre": "Fibra esponja 3x2",
     "precio": 100,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja nube",
     "precio": 70,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja anatomic x3",
     "precio": 130,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja de baño 2x1",
     "precio": 70,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja chatita dorada",
     "precio": 80,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja rulo inoxidable",
     "precio": 50,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja de alambre",
     "precio": 40,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja aluminio rollitos x6",
     "precio": 60,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@ window.PRODUCTOS = [
     "nombre": "Fibra natural X2",
     "precio": 60,
     "novedad": false,
-    "icono": "sponge"
+    "icono": "sponge",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@ window.PRODUCTOS = [
     "nombre": "Paño de piso grande",
     "precio": 100,
     "novedad": false,
-    "icono": "cloth"
+    "icono": "cloth",
+    "imagen": "imagenes-productos/panos-microfibra.webp"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@ window.PRODUCTOS = [
     "nombre": "Paño microfibra 50x55",
     "precio": 80,
     "novedad": false,
-    "icono": "cloth"
+    "icono": "cloth",
+    "imagen": "imagenes-productos/panos-microfibra.webp"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@ window.PRODUCTOS = [
     "nombre": "Fregón algodón",
     "precio": 50,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@ window.PRODUCTOS = [
     "nombre": "Fregón de microfibra Duramás 32x32",
     "precio": 50,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@ window.PRODUCTOS = [
     "nombre": "Repasador color 50x60",
     "precio": 80,
     "novedad": false,
-    "icono": "cloth"
+    "icono": "cloth",
+    "imagen": "imagenes-productos/panos-microfibra.webp"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@ window.PRODUCTOS = [
     "nombre": "Franela mediana 30x40",
     "precio": 40,
     "novedad": false,
-    "icono": "cloth"
+    "icono": "cloth",
+    "imagen": "imagenes-productos/panos-microfibra.webp"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@ window.PRODUCTOS = [
     "nombre": "Pala con mango",
     "precio": 130,
     "novedad": false,
-    "icono": "dustpan"
+    "icono": "dustpan",
+    "imagen": "imagenes-productos/pala-residuos.webp"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@ window.PRODUCTOS = [
     "nombre": "Pala con cepillo",
     "precio": 160,
     "novedad": false,
-    "icono": "dustpan"
+    "icono": "dustpan",
+    "imagen": "imagenes-productos/pala-residuos.webp"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@ window.PRODUCTOS = [
     "nombre": "Escoba IDEAL clásica",
     "precio": 350,
     "novedad": false,
-    "icono": "broom"
+    "icono": "broom",
+    "imagen": "imagenes-productos/escoba.webp"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@ window.PRODUCTOS = [
     "nombre": "Escoba Blanco y negro",
     "precio": 200,
     "novedad": true,
-    "icono": "broom"
+    "icono": "broom",
+    "imagen": "imagenes-productos/escoba.webp"
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@ window.PRODUCTOS = [
     "nombre": "Escoba Charmosa",
     "precio": 150,
     "novedad": false,
-    "icono": "broom"
+    "icono": "broom",
+    "imagen": "imagenes-productos/escoba.webp"
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@ window.PRODUCTOS = [
     "nombre": "Escoba de jardín",
     "precio": 190,
     "novedad": false,
-    "icono": "garden-broom"
+    "icono": "garden-broom",
+    "imagen": "imagenes-productos/escoba.webp"
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@ window.PRODUCTOS = [
     "nombre": "Escobillon Mileva",
     "precio": 300,
     "novedad": false,
-    "icono": "broom"
+    "icono": "broom",
+    "imagen": "imagenes-productos/escoba.webp"
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@ window.PRODUCTOS = [
     "nombre": "Cabo de madera",
     "precio": 80,
     "novedad": false,
-    "icono": "handle"
+    "icono": "handle",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@ window.PRODUCTOS = [
     "nombre": "Lampazo 30cm",
     "precio": 130,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/lampazo-plano.webp"
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@ window.PRODUCTOS = [
     "nombre": "Lampazo reforzado 34cm",
     "precio": 330,
     "novedad": true,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/lampazo-plano.webp"
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@ window.PRODUCTOS = [
     "nombre": "Lampazo reforzado 34cm con cabo",
     "precio": 400,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/lampazo-plano.webp"
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@ window.PRODUCTOS = [
     "nombre": "Sopapa",
     "precio": 80,
     "novedad": false,
-    "icono": "plunger"
+    "icono": "plunger",
+    "imagen": "imagenes-productos/sopapa.webp"
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@ window.PRODUCTOS = [
     "nombre": "Sopapa de cocina",
     "precio": 60,
     "novedad": false,
-    "icono": "plunger"
+    "icono": "plunger",
+    "imagen": "imagenes-productos/sopapa.webp"
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@ window.PRODUCTOS = [
     "nombre": "Cepillo de ropa",
     "precio": 60,
     "novedad": false,
-    "icono": "brush"
+    "icono": "brush",
+    "imagen": "imagenes-productos/cepillo-limpieza.webp"
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@ window.PRODUCTOS = [
     "nombre": "Gatillo pulverizador",
     "precio": 50,
     "novedad": false,
-    "icono": "trigger"
+    "icono": "trigger",
+    "imagen": "imagenes-productos/pulverizador.webp"
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@ window.PRODUCTOS = [
     "nombre": "Palillos plástico docena",
     "precio": 70,
     "novedad": false,
-    "icono": "clothespins"
+    "icono": "clothespins",
+    "imagen": "imagenes-productos/tendedero.webp"
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@ window.PRODUCTOS = [
     "nombre": "Palillos madera docena",
     "precio": 70,
     "novedad": false,
-    "icono": "clothespins"
+    "icono": "clothespins",
+    "imagen": "imagenes-productos/tendedero.webp"
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@ window.PRODUCTOS = [
     "nombre": "Guantes de nitrilo x12",
     "precio": 110,
     "novedad": false,
-    "icono": "gloves"
+    "icono": "gloves",
+    "imagen": "imagenes-productos/guantes.webp"
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@ window.PRODUCTOS = [
     "nombre": "Guantes super resistentes SINTALC",
     "precio": 170,
     "novedad": false,
-    "icono": "gloves"
+    "icono": "gloves",
+    "imagen": "imagenes-productos/guantes.webp"
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@ window.PRODUCTOS = [
     "nombre": "Repuesto de fregona algodón Ideal",
     "precio": 240,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@ window.PRODUCTOS = [
     "nombre": "Set de balde, escurridor y fregona",
     "precio": 500,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@ window.PRODUCTOS = [
     "nombre": "Set balde escurridor giratorio con mopa de repuesto",
     "precio": 790,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@ window.PRODUCTOS = [
     "nombre": "Repuesto Set giratorio (cabo y mopa)",
     "precio": 260,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@ window.PRODUCTOS = [
     "nombre": "Repuesto de mopa para set giratorio",
     "precio": 60,
     "novedad": false,
-    "icono": "mop"
+    "icono": "mop",
+    "imagen": "imagenes-productos/mopa.webp"
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón en polvo espuma controlada 800 g",
     "precio": 120,
     "novedad": false,
-    "icono": "powder-box"
+    "icono": "powder-box",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón en polvo espuma controlada 5 kg",
     "precio": 580,
     "novedad": false,
-    "icono": "powder-box"
+    "icono": "powder-box",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón líquido espuma controlada 900 cc",
     "precio": 100,
     "novedad": false,
-    "icono": "laundry-bottle"
+    "icono": "laundry-bottle",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón líquido espuma controlada 3 L",
     "precio": 310,
     "novedad": false,
-    "icono": "laundry-bottle"
+    "icono": "laundry-bottle",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón líquido espuma controlada 5 L",
     "precio": 480,
     "novedad": false,
-    "icono": "laundry-bottle"
+    "icono": "laundry-bottle",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@ window.PRODUCTOS = [
     "nombre": "Suavizante Bonsai 1 L",
     "precio": 100,
     "novedad": false,
-    "icono": "softener"
+    "icono": "softener",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@ window.PRODUCTOS = [
     "nombre": "Suavizante Bonsai 3 L",
     "precio": 220,
     "novedad": false,
-    "icono": "softener"
+    "icono": "softener",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@ window.PRODUCTOS = [
     "nombre": "Suavizante Bonsai 5 L",
     "precio": 330,
     "novedad": false,
-    "icono": "softener"
+    "icono": "softener",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@ window.PRODUCTOS = [
     "nombre": "Perfumador de telas 250 cc",
     "precio": 150,
     "novedad": false,
-    "icono": "fabric-spray"
+    "icono": "fabric-spray",
+    "imagen": "imagenes-productos/pulverizador-jarra.webp"
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@ window.PRODUCTOS = [
     "nombre": "Perfumador de telas 1 L",
     "precio": 400,
     "novedad": false,
-    "icono": "fabric-spray"
+    "icono": "fabric-spray",
+    "imagen": "imagenes-productos/pulverizador-jarra.webp"
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón de manos líquido 500 cc",
     "precio": 80,
     "novedad": false,
-    "icono": "hand-soap"
+    "icono": "hand-soap",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón de manos líquido 1 L",
     "precio": 140,
     "novedad": false,
-    "icono": "hand-soap"
+    "icono": "hand-soap",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón de manos líquido 3 L",
     "precio": 310,
     "novedad": false,
-    "icono": "hand-soap"
+    "icono": "hand-soap",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@ window.PRODUCTOS = [
     "nombre": "Jabón de manos líquido 5 L",
     "precio": 490,
     "novedad": false,
-    "icono": "hand-soap"
+    "icono": "hand-soap",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@ window.PRODUCTOS = [
     "nombre": "Amonio cuaternario (antibacterial) 1 L",
     "precio": 130,
     "novedad": false,
-    "icono": "disinfectant"
+    "icono": "disinfectant",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@ window.PRODUCTOS = [
     "nombre": "Amonio cuaternario (antibacterial) 3 L",
     "precio": 320,
     "novedad": false,
-    "icono": "disinfectant"
+    "icono": "disinfectant",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@ window.PRODUCTOS = [
     "nombre": "Amonio cuaternario (antibacterial) 5 L",
     "precio": 500,
     "novedad": false,
-    "icono": "disinfectant"
+    "icono": "disinfectant",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@ window.PRODUCTOS = [
     "nombre": "Detergente de cocina 1 L",
     "precio": 90,
     "novedad": false,
-    "icono": "dish-soap"
+    "icono": "dish-soap",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@ window.PRODUCTOS = [
     "nombre": "Detergente de cocina 3 L",
     "precio": 220,
     "novedad": false,
-    "icono": "dish-soap"
+    "icono": "dish-soap",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@ window.PRODUCTOS = [
     "nombre": "Detergente de cocina 5 L",
     "precio": 330,
     "novedad": false,
-    "icono": "dish-soap"
+    "icono": "dish-soap",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@ window.PRODUCTOS = [
     "nombre": "Desengrasante cítrico 500 cc",
     "precio": 90,
     "novedad": false,
-    "icono": "degreaser"
+    "icono": "degreaser",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 61,
@@ -485,7 +545,8 @@ window.PRODUCTOS = [
     "nombre": "Desengrasante cítrico 1 L",
     "precio": 150,
     "novedad": false,
-    "icono": "degreaser"
+    "icono": "degreaser",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 62,
@@ -493,7 +554,8 @@ window.PRODUCTOS = [
     "nombre": "Desengrasante cítrico 3 L",
     "precio": 340,
     "novedad": false,
-    "icono": "degreaser"
+    "icono": "degreaser",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 63,
@@ -501,7 +563,8 @@ window.PRODUCTOS = [
     "nombre": "Desengrasante cítrico 5 L",
     "precio": 500,
     "novedad": false,
-    "icono": "degreaser"
+    "icono": "degreaser",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 64,
@@ -509,7 +572,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiador desodorante 1 L",
     "precio": 90,
     "novedad": false,
-    "icono": "floor-cleaner"
+    "icono": "floor-cleaner",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 65,
@@ -517,7 +581,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiador desodorante 3 L",
     "precio": 220,
     "novedad": false,
-    "icono": "floor-cleaner"
+    "icono": "floor-cleaner",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 66,
@@ -525,7 +590,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiador desodorante 5 L",
     "precio": 330,
     "novedad": false,
-    "icono": "floor-cleaner"
+    "icono": "floor-cleaner",
+    "imagen": "imagenes-productos/detergente-verde.webp"
   },
   {
     "id": 67,
@@ -533,7 +599,8 @@ window.PRODUCTOS = [
     "nombre": "Solución de hipoclorito de sodio 1 L",
     "precio": 80,
     "novedad": false,
-    "icono": "bleach"
+    "icono": "bleach",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 68,
@@ -541,7 +608,8 @@ window.PRODUCTOS = [
     "nombre": "Solución de hipoclorito de sodio 2 L",
     "precio": 130,
     "novedad": false,
-    "icono": "bleach"
+    "icono": "bleach",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 69,
@@ -549,7 +617,8 @@ window.PRODUCTOS = [
     "nombre": "Solución de hipoclorito de sodio 3 L",
     "precio": 180,
     "novedad": false,
-    "icono": "bleach"
+    "icono": "bleach",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 70,
@@ -557,7 +626,8 @@ window.PRODUCTOS = [
     "nombre": "Solución de hipoclorito de sodio 5 L",
     "precio": 260,
     "novedad": false,
-    "icono": "bleach"
+    "icono": "bleach",
+    "imagen": "imagenes-productos/detergente-azul.webp"
   },
   {
     "id": 71,
@@ -565,7 +635,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiavidrios Bonsai 1 L",
     "precio": 140,
     "novedad": false,
-    "icono": "glass-cleaner"
+    "icono": "glass-cleaner",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 72,
@@ -573,7 +644,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiavidrios Bonsai 3 L",
     "precio": 360,
     "novedad": false,
-    "icono": "glass-cleaner"
+    "icono": "glass-cleaner",
+    "imagen": "imagenes-productos/spray-limpiador.webp"
   },
   {
     "id": 73,
@@ -581,7 +653,8 @@ window.PRODUCTOS = [
     "nombre": "Limpiador cremoso Bonsai 650 cc",
     "precio": 130,
     "novedad": false,
-    "icono": "cream-cleaner"
+    "icono": "cream-cleaner",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 74,
@@ -589,7 +662,8 @@ window.PRODUCTOS = [
     "nombre": "50x56 - 30 unidades",
     "precio": 100,
     "novedad": false,
-    "icono": "trash-bags"
+    "icono": "trash-bags",
+    "imagen": "imagenes-productos/bolsa-basura.webp"
   },
   {
     "id": 75,
@@ -597,7 +671,8 @@ window.PRODUCTOS = [
     "nombre": "85x105 - 10 unidades",
     "precio": 140,
     "novedad": false,
-    "icono": "trash-bags"
+    "icono": "trash-bags",
+    "imagen": "imagenes-productos/bolsa-basura.webp"
   },
   {
     "id": 76,
@@ -605,7 +680,8 @@ window.PRODUCTOS = [
     "nombre": "Balde 9 Litros",
     "precio": 120,
     "novedad": false,
-    "icono": "bucket"
+    "icono": "bucket",
+    "imagen": "imagenes-productos/balde.webp"
   },
   {
     "id": 77,
@@ -613,7 +689,8 @@ window.PRODUCTOS = [
     "nombre": "Balde negro",
     "precio": 120,
     "novedad": false,
-    "icono": "bucket"
+    "icono": "bucket",
+    "imagen": "imagenes-productos/balde.webp"
   },
   {
     "id": 78,
@@ -621,7 +698,8 @@ window.PRODUCTOS = [
     "nombre": "Escobilla de baño con base",
     "precio": 100,
     "novedad": false,
-    "icono": "toilet-brush"
+    "icono": "toilet-brush",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 79,
@@ -629,7 +707,8 @@ window.PRODUCTOS = [
     "nombre": "Tacho de residuos c/pedal",
     "precio": 280,
     "novedad": false,
-    "icono": "trash-bin"
+    "icono": "trash-bin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 80,
@@ -637,7 +716,8 @@ window.PRODUCTOS = [
     "nombre": "Basurero tapa vaiven 27Lts",
     "precio": 330,
     "novedad": false,
-    "icono": "trash-bin"
+    "icono": "trash-bin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 81,
@@ -645,7 +725,8 @@ window.PRODUCTOS = [
     "nombre": "Basurero tapa vaiven 7Lts",
     "precio": 160,
     "novedad": false,
-    "icono": "trash-bin"
+    "icono": "trash-bin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 82,
@@ -653,7 +734,8 @@ window.PRODUCTOS = [
     "nombre": "Cesto de ropa con tapa 44x43x60",
     "precio": 340,
     "novedad": false,
-    "icono": "laundry-basket"
+    "icono": "laundry-basket",
+    "imagen": "imagenes-productos/canasto-productos.webp"
   },
   {
     "id": 83,
@@ -661,7 +743,8 @@ window.PRODUCTOS = [
     "nombre": "Canasto para ropa (tendedero)",
     "precio": 220,
     "novedad": false,
-    "icono": "laundry-basket"
+    "icono": "laundry-basket",
+    "imagen": "imagenes-productos/canasto-productos.webp"
   },
   {
     "id": 84,
@@ -669,7 +752,8 @@ window.PRODUCTOS = [
     "nombre": "Cuerda de nylon para ropa 10M",
     "precio": 50,
     "novedad": false,
-    "icono": "clothesline"
+    "icono": "clothesline",
+    "imagen": "imagenes-productos/tendedero.webp"
   },
   {
     "id": 85,
@@ -677,7 +761,8 @@ window.PRODUCTOS = [
     "nombre": "Palmeta matamoscas",
     "precio": 50,
     "novedad": false,
-    "icono": "fly-swatter"
+    "icono": "fly-swatter",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 86,
@@ -685,7 +770,8 @@ window.PRODUCTOS = [
     "nombre": "Dispensador de jabón",
     "precio": 150,
     "novedad": false,
-    "icono": "soap-dispenser"
+    "icono": "soap-dispenser",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 87,
@@ -693,7 +779,8 @@ window.PRODUCTOS = [
     "nombre": "Embudo 12cm",
     "precio": 40,
     "novedad": false,
-    "icono": "funnel"
+    "icono": "funnel",
+    "imagen": "imagenes-productos/embudo-jarra.webp"
   },
   {
     "id": 88,
@@ -701,7 +788,8 @@ window.PRODUCTOS = [
     "nombre": "Lampazo limpiavidrios extensible",
     "precio": 180,
     "novedad": false,
-    "icono": "squeegee"
+    "icono": "squeegee",
+    "imagen": "imagenes-productos/lampazo-plano.webp"
   },
   {
     "id": 89,
@@ -709,7 +797,8 @@ window.PRODUCTOS = [
     "nombre": "Palangana 28x10",
     "precio": 110,
     "novedad": false,
-    "icono": "basin"
+    "icono": "basin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 90,
@@ -717,7 +806,8 @@ window.PRODUCTOS = [
     "nombre": "Palangana 32x11",
     "precio": 130,
     "novedad": false,
-    "icono": "basin"
+    "icono": "basin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 91,
@@ -725,7 +815,8 @@ window.PRODUCTOS = [
     "nombre": "Palangana 36x11",
     "precio": 150,
     "novedad": false,
-    "icono": "basin"
+    "icono": "basin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 92,
@@ -733,7 +824,8 @@ window.PRODUCTOS = [
     "nombre": "Palangana 41x24 37 litros",
     "precio": 260,
     "novedad": false,
-    "icono": "basin"
+    "icono": "basin",
+    "imagen": "imagenes-productos/palangana-productos.webp"
   },
   {
     "id": 93,
@@ -741,7 +833,8 @@ window.PRODUCTOS = [
     "nombre": "Maceta Terracota 13 cm diámetro",
     "precio": 60,
     "novedad": false,
-    "icono": "pot"
+    "icono": "pot",
+    "imagen": "imagenes-productos/maceta.webp"
   },
   {
     "id": 94,
@@ -749,7 +842,8 @@ window.PRODUCTOS = [
     "nombre": "Maceta Terracota 17 cm diámetro",
     "precio": 80,
     "novedad": false,
-    "icono": "pot"
+    "icono": "pot",
+    "imagen": "imagenes-productos/maceta.webp"
   },
   {
     "id": 95,
@@ -757,7 +851,8 @@ window.PRODUCTOS = [
     "nombre": "Maceta Terracota 22 cm diámetro",
     "precio": 90,
     "novedad": false,
-    "icono": "pot"
+    "icono": "pot",
+    "imagen": "imagenes-productos/maceta.webp"
   },
   {
     "id": 96,
@@ -765,7 +860,8 @@ window.PRODUCTOS = [
     "nombre": "Maceta Terracota 28 cm diámetro",
     "precio": 110,
     "novedad": false,
-    "icono": "pot"
+    "icono": "pot",
+    "imagen": "imagenes-productos/maceta.webp"
   },
   {
     "id": 97,
@@ -773,7 +869,8 @@ window.PRODUCTOS = [
     "nombre": "Maceta Terracota 35 cm diámetro",
     "precio": 170,
     "novedad": false,
-    "icono": "pot"
+    "icono": "pot",
+    "imagen": "imagenes-productos/maceta.webp"
   },
   {
     "id": 98,
@@ -781,7 +878,8 @@ window.PRODUCTOS = [
     "nombre": "Higienol Texturado 4x30 Metros",
     "precio": 60,
     "novedad": false,
-    "icono": "toilet-paper"
+    "icono": "toilet-paper",
+    "imagen": "imagenes-productos/papel-higienico.webp"
   },
   {
     "id": 99,
@@ -789,7 +887,8 @@ window.PRODUCTOS = [
     "nombre": "Higienol doble hoja 4x30 Metros",
     "precio": 160,
     "novedad": false,
-    "icono": "toilet-paper"
+    "icono": "toilet-paper",
+    "imagen": "imagenes-productos/papel-higienico.webp"
   },
   {
     "id": 100,
@@ -797,7 +896,8 @@ window.PRODUCTOS = [
     "nombre": "Higienol doble hoja 8x30 Metros",
     "precio": 260,
     "novedad": false,
-    "icono": "toilet-paper"
+    "icono": "toilet-paper",
+    "imagen": "imagenes-productos/papel-higienico.webp"
   },
   {
     "id": 101,
@@ -805,7 +905,8 @@ window.PRODUCTOS = [
     "nombre": "Toalla de cocina Nova",
     "precio": 80,
     "novedad": false,
-    "icono": "paper-towel"
+    "icono": "paper-towel",
+    "imagen": "imagenes-productos/rollos-papel.webp"
   },
   {
     "id": 102,
@@ -813,7 +914,8 @@ window.PRODUCTOS = [
     "nombre": "3 rollos x 50 paños",
     "precio": 70,
     "novedad": false,
-    "icono": "paper-towel"
+    "icono": "paper-towel",
+    "imagen": "imagenes-productos/rollos-papel.webp"
   },
   {
     "id": 103,
@@ -821,7 +923,8 @@ window.PRODUCTOS = [
     "nombre": "Servilleta tamaño mesa x50",
     "precio": 70,
     "novedad": false,
-    "icono": "napkin"
+    "icono": "napkin",
+    "imagen": "imagenes-productos/panuelos-caja.webp"
   },
   {
     "id": 104,
@@ -829,7 +932,8 @@ window.PRODUCTOS = [
     "nombre": "Pañuelos Elite 10 paq. x10",
     "precio": 190,
     "novedad": false,
-    "icono": "tissues"
+    "icono": "tissues",
+    "imagen": "imagenes-productos/panuelos-caja.webp"
   },
   {
     "id": 105,
@@ -837,7 +941,8 @@ window.PRODUCTOS = [
     "nombre": "Papel aluminio 30cm x 7.5m",
     "precio": 100,
     "novedad": false,
-    "icono": "foil"
+    "icono": "foil",
+    "imagen": "imagenes-productos/papeles.webp"
   },
   {
     "id": 106,
@@ -845,7 +950,8 @@ window.PRODUCTOS = [
     "nombre": "Papel manteca 30cm x 7.5m",
     "precio": 90,
     "novedad": false,
-    "icono": "baking-paper"
+    "icono": "baking-paper",
+    "imagen": "imagenes-productos/papeles.webp"
   },
   {
     "id": 107,
@@ -853,7 +959,8 @@ window.PRODUCTOS = [
     "nombre": "Film adherente 28cm x 50m",
     "precio": 100,
     "novedad": false,
-    "icono": "cling-film"
+    "icono": "cling-film",
+    "imagen": "imagenes-productos/papeles.webp"
   },
   {
     "id": 108,
@@ -861,7 +968,8 @@ window.PRODUCTOS = [
     "nombre": "Raid moscas y mosquitos sin olor",
     "precio": 350,
     "novedad": false,
-    "icono": "insect-spray"
+    "icono": "insect-spray",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 109,
@@ -869,7 +977,8 @@ window.PRODUCTOS = [
     "nombre": "Jupiter max sin olor",
     "precio": 180,
     "novedad": false,
-    "icono": "insect-spray"
+    "icono": "insect-spray",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 110,
@@ -877,7 +986,8 @@ window.PRODUCTOS = [
     "nombre": "Espiral Jupiter tradicional caja x10",
     "precio": 80,
     "novedad": false,
-    "icono": "mosquito-coil"
+    "icono": "mosquito-coil",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 111,
@@ -885,7 +995,8 @@ window.PRODUCTOS = [
     "nombre": "Espiral Jupiter perfumada caja x10",
     "precio": 80,
     "novedad": false,
-    "icono": "mosquito-coil"
+    "icono": "mosquito-coil",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 112,
@@ -893,7 +1004,8 @@ window.PRODUCTOS = [
     "nombre": "Repelente Jupiter aerosol 165cm³",
     "precio": 160,
     "novedad": false,
-    "icono": "insect-spray"
+    "icono": "insect-spray",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 113,
@@ -901,7 +1013,8 @@ window.PRODUCTOS = [
     "nombre": "Repelente Jupiter crema 80gr",
     "precio": 180,
     "novedad": false,
-    "icono": "repellent"
+    "icono": "repellent",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 114,
@@ -909,7 +1022,8 @@ window.PRODUCTOS = [
     "nombre": "Pastillas para mosquitos Jupiter",
     "precio": 150,
     "novedad": false,
-    "icono": "tablets"
+    "icono": "tablets",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 115,
@@ -917,7 +1031,8 @@ window.PRODUCTOS = [
     "nombre": "Aparato para pastillas Jupiter",
     "precio": 190,
     "novedad": false,
-    "icono": "tablets"
+    "icono": "tablets",
+    "imagen": "imagenes-productos/insecticida.webp"
   },
   {
     "id": 116,
@@ -925,7 +1040,8 @@ window.PRODUCTOS = [
     "nombre": "Desodorante en aerosol (Lavanda, Jazmín, Vainilla y Brisas de bebé)",
     "precio": 120,
     "novedad": false,
-    "icono": "air-freshener"
+    "icono": "air-freshener",
+    "imagen": "imagenes-productos/botella-aromatizante.webp"
   },
   {
     "id": 117,
@@ -933,7 +1049,8 @@ window.PRODUCTOS = [
     "nombre": "Desinfectante en aerosol Original y Lavanda",
     "precio": 200,
     "novedad": false,
-    "icono": "disinfectant"
+    "icono": "disinfectant",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 118,
@@ -941,7 +1058,8 @@ window.PRODUCTOS = [
     "nombre": "Alcohol en gel Jupiter 250cc",
     "precio": 90,
     "novedad": false,
-    "icono": "sanitizer"
+    "icono": "sanitizer",
+    "imagen": "imagenes-productos/jabon-liquido-verde.webp"
   },
   {
     "id": 119,
@@ -949,7 +1067,8 @@ window.PRODUCTOS = [
     "nombre": "Pastilla inodoro",
     "precio": 40,
     "novedad": false,
-    "icono": "toilet-block"
+    "icono": "toilet-block",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 120,
@@ -957,7 +1076,8 @@ window.PRODUCTOS = [
     "nombre": "Lustramuebles Jupiter 360ml",
     "precio": 210,
     "novedad": false,
-    "icono": "furniture-polish"
+    "icono": "furniture-polish",
+    "imagen": "imagenes-productos/botella-aromatizante.webp"
   },
   {
     "id": 121,
@@ -965,7 +1085,8 @@ window.PRODUCTOS = [
     "nombre": "Protector solar factor 50 180g",
     "precio": 510,
     "novedad": false,
-    "icono": "sunscreen"
+    "icono": "sunscreen",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 122,
@@ -973,7 +1094,8 @@ window.PRODUCTOS = [
     "nombre": "Quitamanchas en barra 75g",
     "precio": 50,
     "novedad": false,
-    "icono": "stain-remover"
+    "icono": "stain-remover",
+    "imagen": "imagenes-productos/cepillo-esponja.webp"
   },
   {
     "id": 123,
@@ -981,7 +1103,8 @@ window.PRODUCTOS = [
     "nombre": "Percha aromatizadora",
     "precio": 70,
     "novedad": false,
-    "icono": "hanger"
+    "icono": "hanger",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 124,
@@ -989,7 +1112,8 @@ window.PRODUCTOS = [
     "nombre": "Burlete para puerta 95cm",
     "precio": 150,
     "novedad": false,
-    "icono": "door-seal"
+    "icono": "door-seal",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 125,
@@ -997,7 +1121,8 @@ window.PRODUCTOS = [
     "nombre": "Alfombra de baño 33x65cm",
     "precio": 160,
     "novedad": false,
-    "icono": "bath-mat"
+    "icono": "bath-mat",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 126,
@@ -1005,7 +1130,8 @@ window.PRODUCTOS = [
     "nombre": "Bicarbonato de sodio 1KG.",
     "precio": 120,
     "novedad": true,
-    "icono": "baking-soda"
+    "icono": "baking-soda",
+    "imagen": "imagenes-productos/productos-limpieza.webp"
   },
   {
     "id": 127,
@@ -1013,7 +1139,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja de baño luffa",
     "precio": 130,
     "novedad": false,
-    "icono": "loofah"
+    "icono": "loofah",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 128,
@@ -1021,7 +1148,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja ovalada doble luffa",
     "precio": 240,
     "novedad": false,
-    "icono": "loofah"
+    "icono": "loofah",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 129,
@@ -1029,7 +1157,8 @@ window.PRODUCTOS = [
     "nombre": "Esponja lavavajillas luffa",
     "precio": 110,
     "novedad": false,
-    "icono": "loofah"
+    "icono": "loofah",
+    "imagen": "imagenes-productos/esponja.webp"
   },
   {
     "id": 130,
@@ -1037,7 +1166,8 @@ window.PRODUCTOS = [
     "nombre": "Cera al agua 450 cc.",
     "precio": 90,
     "novedad": false,
-    "icono": "wax"
+    "icono": "wax",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 131,
@@ -1045,7 +1175,8 @@ window.PRODUCTOS = [
     "nombre": "Cera al agua 1 lt",
     "precio": 190,
     "novedad": false,
-    "icono": "wax"
+    "icono": "wax",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 132,
@@ -1053,7 +1184,8 @@ window.PRODUCTOS = [
     "nombre": "Cera piso de madera roble claro",
     "precio": 300,
     "novedad": false,
-    "icono": "wax"
+    "icono": "wax",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   },
   {
     "id": 133,
@@ -1061,6 +1193,7 @@ window.PRODUCTOS = [
     "nombre": "Cera piso de madera roble oscuro",
     "precio": 300,
     "novedad": false,
-    "icono": "wax"
+    "icono": "wax",
+    "imagen": "imagenes-productos/detergente-naranja.webp"
   }
 ];
