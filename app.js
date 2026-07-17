@@ -29,6 +29,7 @@
     viewerStartX: 0,
     viewerStartY: 0,
     viewerLastTap: 0,
+    viewerHistoryActive: false,
     featuredIds: []
   };
 
@@ -574,18 +575,14 @@
       const slide = document.createElement("article");
       slide.className = "promo-slide";
       slide.innerHTML = `
-        <button
-          class="open-news-image"
-          type="button"
-          data-open-news="${index}"
-          aria-label="Ampliar ${escapeHtml(item.title)}"
-          title="Ver en pantalla completa"
-        ><span aria-hidden="true">⛶</span> Ampliar</button>
         <img
           src="${item.url}"
           alt="${escapeHtml(item.title)}"
           draggable="false"
           data-open-news="${index}"
+          role="button"
+          tabindex="0"
+          aria-label="Ver ${escapeHtml(item.title)} en pantalla completa"
         >
       `;
       elements.carouselTrack.appendChild(slide);
@@ -695,19 +692,49 @@
   function openImageViewer(index) {
     state.viewerIndex = Number(index) || 0;
     renderViewerImage();
+
+    const wasClosed = elements.imageViewer.hidden;
+
     elements.imageViewer.hidden = false;
     elements.imageViewer.setAttribute("aria-hidden", "false");
     document.body.classList.add("image-viewer-open");
     stopCarouselTimer();
+
+    if (wasClosed) {
+      history.pushState(
+        { ...(history.state || {}), laMingaImageViewer: true },
+        "",
+        location.href
+      );
+      state.viewerHistoryActive = true;
+    }
+
     requestAnimationFrame(() => elements.closeImageViewer.focus());
   }
 
-  function closeImageViewer() {
+  function finishCloseImageViewer() {
     elements.imageViewer.hidden = true;
     elements.imageViewer.setAttribute("aria-hidden", "true");
     document.body.classList.remove("image-viewer-open");
+    state.viewerHistoryActive = false;
     resetViewerZoom();
-    if (!elements.news.hidden) startCarouselTimer();
+
+    if (!elements.news.hidden) {
+      startCarouselTimer();
+    }
+  }
+
+  function closeImageViewer() {
+    if (
+      state.viewerHistoryActive &&
+      history.state &&
+      history.state.laMingaImageViewer
+    ) {
+      history.back();
+      return;
+    }
+
+    finishCloseImageViewer();
   }
 
   function changeViewerImage(delta) {
@@ -1080,28 +1107,60 @@
     openImageViewer(Number(target.dataset.openNews));
   });
 
+  elements.carouselTrack.addEventListener("keydown", event => {
+    const target = event.target.closest("[data-open-news]");
+    if (!target) return;
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openImageViewer(Number(target.dataset.openNews));
+    }
+  });
+
   elements.closeImageViewer.addEventListener("click", closeImageViewer);
   elements.imageViewerBackdrop.addEventListener("click", closeImageViewer);
-  elements.zoomInButton.addEventListener("click", () => setViewerZoom(state.viewerScale + .35));
-  elements.zoomOutButton.addEventListener("click", () => setViewerZoom(state.viewerScale - .35));
+  elements.zoomInButton.addEventListener(
+    "click",
+    () => setViewerZoom(state.viewerScale + .35)
+  );
+  elements.zoomOutButton.addEventListener(
+    "click",
+    () => setViewerZoom(state.viewerScale - .35)
+  );
   elements.zoomResetButton.addEventListener("click", resetViewerZoom);
-  elements.viewerPrev.addEventListener("click", () => changeViewerImage(-1));
-  elements.viewerNext.addEventListener("click", () => changeViewerImage(1));
+  elements.viewerPrev.addEventListener(
+    "click",
+    () => changeViewerImage(-1)
+  );
+  elements.viewerNext.addEventListener(
+    "click",
+    () => changeViewerImage(1)
+  );
 
-  elements.imageViewerStage.addEventListener("wheel", event => {
-    event.preventDefault();
-    setViewerZoom(state.viewerScale + (event.deltaY < 0 ? .25 : -.25));
-  }, { passive: false });
+  elements.imageViewerStage.addEventListener(
+    "wheel",
+    event => {
+      event.preventDefault();
+      setViewerZoom(
+        state.viewerScale + (event.deltaY < 0 ? .25 : -.25)
+      );
+    },
+    { passive: false }
+  );
 
   elements.imageViewerStage.addEventListener("pointerdown", event => {
     const now = Date.now();
+
     if (now - state.viewerLastTap < 320) {
       setViewerZoom(state.viewerScale > 1 ? 1 : 2.25);
       state.viewerLastTap = 0;
       return;
     }
+
     state.viewerLastTap = now;
+
     if (state.viewerScale <= 1) return;
+
     state.viewerDragging = true;
     state.viewerDragStartX = event.clientX;
     state.viewerDragStartY = event.clientY;
@@ -1113,33 +1172,84 @@
 
   elements.imageViewerStage.addEventListener("pointermove", event => {
     if (!state.viewerDragging) return;
-    state.viewerX = state.viewerStartX + (event.clientX - state.viewerDragStartX);
-    state.viewerY = state.viewerStartY + (event.clientY - state.viewerDragStartY);
+
+    state.viewerX =
+      state.viewerStartX +
+      (event.clientX - state.viewerDragStartX);
+
+    state.viewerY =
+      state.viewerStartY +
+      (event.clientY - state.viewerDragStartY);
+
     updateViewerTransform();
   });
 
   function finishViewerDrag(event) {
     if (!state.viewerDragging) return;
+
     state.viewerDragging = false;
     elements.imageViewerStage.classList.remove("dragging");
-    if (event && elements.imageViewerStage.hasPointerCapture(event.pointerId)) {
+
+    if (
+      event &&
+      elements.imageViewerStage.hasPointerCapture(event.pointerId)
+    ) {
       elements.imageViewerStage.releasePointerCapture(event.pointerId);
     }
   }
 
-  elements.imageViewerStage.addEventListener("pointerup", finishViewerDrag);
-  elements.imageViewerStage.addEventListener("pointercancel", finishViewerDrag);
+  elements.imageViewerStage.addEventListener(
+    "pointerup",
+    finishViewerDrag
+  );
+  elements.imageViewerStage.addEventListener(
+    "pointercancel",
+    finishViewerDrag
+  );
+
+  window.addEventListener("popstate", () => {
+    if (!elements.imageViewer.hidden) {
+      finishCloseImageViewer();
+    }
+  });
 
   document.addEventListener("keydown", event => {
     if (!elements.imageViewer.hidden) {
-      if (event.key === "Escape") { closeImageViewer(); return; }
-      if (event.key === "ArrowLeft") { changeViewerImage(-1); return; }
-      if (event.key === "ArrowRight") { changeViewerImage(1); return; }
-      if (event.key === "+" || event.key === "=") { setViewerZoom(state.viewerScale + .35); return; }
-      if (event.key === "-") { setViewerZoom(state.viewerScale - .35); return; }
-      if (event.key === "0") { resetViewerZoom(); return; }
+      if (event.key === "Escape") {
+        closeImageViewer();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        changeViewerImage(-1);
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        changeViewerImage(1);
+        return;
+      }
+
+      if (event.key === "+" || event.key === "=") {
+        setViewerZoom(state.viewerScale + .35);
+        return;
+      }
+
+      if (event.key === "-") {
+        setViewerZoom(state.viewerScale - .35);
+        return;
+      }
+
+      if (event.key === "0") {
+        resetViewerZoom();
+        return;
+      }
     }
-    if (event.key === "Escape" && elements.drawer.classList.contains("open")) {
+
+    if (
+      event.key === "Escape" &&
+      elements.drawer.classList.contains("open")
+    ) {
       closeCart();
     }
   });
@@ -1163,7 +1273,7 @@
     location.protocol.startsWith("http")
   ) {
     navigator.serviceWorker
-      .register("sw.js?v=12", { updateViaCache: "none" })
+      .register("sw.js?v=13", { updateViaCache: "none" })
       .then(registration => registration.update())
       .catch(() => {});
   }

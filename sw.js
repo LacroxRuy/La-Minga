@@ -1,12 +1,12 @@
-const CACHE = "la-minga-destacados-v12";
+const CACHE = "la-minga-back-zoom-v13";
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=12",
+  "./styles.css?v=13",
   "./config.js?v=12",
   "./productos.js?v=12",
-  "./app.js?v=12",
+  "./app.js?v=13",
   "./manifest.webmanifest",
   "./icon.svg",
   "./og-catalogo.png",

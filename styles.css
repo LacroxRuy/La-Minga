@@ -1136,3 +1136,13 @@ body.image-viewer-open { overflow: hidden; }
 
   .benefits-bottom { grid-template-columns: 1fr; }
 }
+
+
+/* La imagen completa abre el visor; no se muestra botón ni círculo adicional. */
+.open-news-image {
+  display: none !important;
+}
+
+.promo-slide img[data-open-news] {
+  cursor: zoom-in;
+}
