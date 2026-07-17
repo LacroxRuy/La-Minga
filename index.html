@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://lacroxruy.github.io/catalogo-la-minga/og-catalogo.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <header class="topbar">
@@ -55,8 +55,15 @@
         <h1>Todo para tu hogar<br><em>en un solo lugar</em></h1>
         <p>Calidad, precios justos y el mejor servicio.</p>
         <div class="hero-actions">
-          <a class="primary-link" href="#catalogo">Ver productos</a>
-          <a class="secondary-link" href="https://wa.me/59899370519" target="_blank" rel="noopener">Consultar</a>
+          <button class="primary-link hero-action-button active" id="showProducts" type="button">
+            Ver productos
+          </button>
+          <a class="secondary-link" href="https://wa.me/59899370519" target="_blank" rel="noopener">
+            Consultar
+          </a>
+          <button class="news-link hero-action-button" id="showNews" type="button">
+            Novedades
+          </button>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -68,6 +75,45 @@
       <article><span>🚚</span><div><b>Envíos a domicilio</b><small>Sin costo</small></div></article>
       <article><span>🛒</span><div><b>Compra mínima</b><small>$500</small></div></article>
       <article><span>💬</span><div><b>Pedidos por WhatsApp</b><small>099 370 519</small></div></article>
+    </section>
+
+    <section class="news-section" id="novedades" hidden>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">NOVEDADES Y PROMOCIONES</span>
+          <h2>Lo último de La Minga</h2>
+        </div>
+        <p id="newsCount"></p>
+      </div>
+
+      <div class="news-loading" id="newsLoading">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <p>Cargando novedades…</p>
+      </div>
+
+      <div class="news-empty" id="newsEmpty" hidden>
+        <span>🖼️</span>
+        <h3>Todavía no hay novedades cargadas</h3>
+        <p>Agregá archivos en la carpeta <b>imagenes-novedades</b>.</p>
+      </div>
+
+      <div class="carousel-shell" id="carouselShell" hidden>
+        <button class="carousel-arrow carousel-prev" id="carouselPrev" type="button" aria-label="Novedad anterior">‹</button>
+
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+
+        <button class="carousel-arrow carousel-next" id="carouselNext" type="button" aria-label="Novedad siguiente">›</button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar novedad"></div>
+
+      <div class="news-footer-action">
+        <button class="primary-link hero-action-button" id="newsBackToProducts" type="button">
+          Ver productos
+        </button>
+      </div>
     </section>
 
     <section class="catalog-section" id="catalogo">
@@ -198,8 +244,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="config.js"></script>
-  <script src="productos.js"></script>
-  <script src="app.js"></script>
+  <script src="config.js?v=5"></script>
+  <script src="productos.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

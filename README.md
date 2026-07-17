@@ -95,3 +95,29 @@ https://lacroxruy.github.io/catalogo-la-minga/?v=2
 ```
 
 El parámetro no cambia la página; solo ayuda a forzar una nueva lectura de la vista previa.
+
+
+## Ilustraciones de productos
+
+Esta versión incluye un pack SVG propio dentro de `iconos-productos.svg`.
+
+Cada artículo tiene un campo `icono` en `productos.js`. Ejemplo:
+
+```js
+{
+  "nombre": "Detergente de cocina 1 L",
+  "icono": "dish-soap"
+}
+```
+
+No se descargaron imágenes externas y no hay costos ni problemas de licencias.
+Para actualizar esta versión en GitHub, reemplazar:
+
+- `productos.js`
+- `app.js`
+- `styles.css`
+- `sw.js`
+
+y agregar:
+
+- `iconos-productos.svg`

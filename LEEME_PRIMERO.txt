@@ -1,0 +1,130 @@
+CATÁLOGO LA MINGA — VERSIÓN CLÁSICA CON ID Y NOVEDADES
+=======================================================
+
+QUÉ MANTIENE
+------------
+
+Esta versión conserva la web anterior:
+
+- Portada original.
+- Beneficios.
+- Productos visibles debajo.
+- Buscador.
+- Categorías horizontales.
+- Carrito.
+- Pedido por WhatsApp.
+
+QUÉ SE AGREGÓ
+-------------
+
+1. Cada producto tiene un ID de imagen fijo.
+2. Se incluye MAPA_IMAGENES_PRODUCTOS.csv.
+3. Las imágenes de producto son cuadradas.
+4. Se agregó el botón Novedades junto a Ver productos y Consultar.
+5. Novedades oculta temporalmente el catálogo.
+6. El carrusel cambia automáticamente.
+7. También se puede mover con flechas, mouse o dedo.
+8. La cantidad de novedades se detecta automáticamente.
+
+PROBAR EN LA PC
+---------------
+
+1. Descomprimí toda la carpeta.
+2. Ejecutá INICIAR_CATALOGO.bat.
+3. Se abrirá:
+
+   http://localhost:8000
+
+No conviene abrir index.html directamente, porque la detección automática
+de archivos necesita un servidor local.
+
+GESTIÓN DE IMÁGENES DE PRODUCTO
+-------------------------------
+
+Las imágenes están en:
+
+imagenes-productos/productos/
+
+Cada producto tiene un archivo fijo:
+
+prod-001.webp
+prod-002.webp
+...
+prod-133.webp
+
+El archivo MAPA_IMAGENES_PRODUCTOS.csv indica exactamente qué producto
+corresponde a cada ID.
+
+Para colocar una imagen real:
+
+1. Preparala preferentemente en 600 × 600 píxeles.
+2. Guardala como WebP.
+3. Buscá el ID del producto en MAPA_IMAGENES_PRODUCTOS.csv.
+4. Reemplazá el archivo correspondiente.
+5. Conservá exactamente el mismo nombre.
+
+Ejemplo:
+
+prod-018.webp = Escoba IDEAL clásica
+
+No es necesario editar productos.js cuando solamente se reemplaza una foto.
+
+REGLAS DE LOS ID
+----------------
+
+- No renumerar los productos existentes.
+- No reutilizar un ID eliminado.
+- Los productos nuevos deben continuar desde el último ID.
+- El nombre comercial puede cambiar, pero el ID debe mantenerse.
+
+NOVEDADES DINÁMICAS
+-------------------
+
+Las novedades están en:
+
+imagenes-novedades/
+
+Nombres admitidos:
+
+novedad-01.webp
+novedad-02.webp
+novedad-03.webp
+...
+
+También admite JPG, JPEG y PNG.
+
+La numeración debe ser consecutiva.
+
+Ejemplos:
+
+- Si hay novedad-01 y novedad-02, muestra 2.
+- Si hay archivos desde novedad-01 hasta novedad-20, muestra 20.
+- Si solamente hay novedad-01, oculta flechas y puntos.
+- Si no hay ninguna, muestra un mensaje.
+- Si falta novedad-05, se detiene en novedad-04.
+
+Para eliminar novedades, borrá los archivos sobrantes y mantené la
+numeración consecutiva.
+
+PUBLICAR EN GITHUB
+------------------
+
+Cuando la versión esté aprobada:
+
+1. Subí todos los archivos sueltos de esta carpeta a la raíz.
+2. Subí completas estas carpetas:
+
+   imagenes-productos/
+   imagenes-novedades/
+
+3. Reemplazá los archivos existentes.
+4. Hacé Commit changes.
+5. Esperá unos minutos.
+6. Probá la página en una ventana de incógnito.
+
+IMPORTANTE SOBRE LA CACHÉ
+-------------------------
+
+El Service Worker usa red primero para las imágenes de productos y novedades.
+Esto permite reemplazar o eliminar imágenes sin que la web conserve fácilmente
+copias antiguas.

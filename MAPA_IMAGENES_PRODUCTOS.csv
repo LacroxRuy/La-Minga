@@ -1,0 +1,134 @@
+﻿ID producto;ID imagen;Archivo a reemplazar;Categoría;Producto
+1;prod-001;imagenes-productos/productos/prod-001.webp;Artículos de limpieza;Fibra esponja 3x2
+2;prod-002;imagenes-productos/productos/prod-002.webp;Artículos de limpieza;Esponja nube
+3;prod-003;imagenes-productos/productos/prod-003.webp;Artículos de limpieza;Esponja anatomic x3
+4;prod-004;imagenes-productos/productos/prod-004.webp;Artículos de limpieza;Esponja de baño 2x1
+5;prod-005;imagenes-productos/productos/prod-005.webp;Artículos de limpieza;Esponja chatita dorada
+6;prod-006;imagenes-productos/productos/prod-006.webp;Artículos de limpieza;Esponja rulo inoxidable
+7;prod-007;imagenes-productos/productos/prod-007.webp;Artículos de limpieza;Esponja de alambre
+8;prod-008;imagenes-productos/productos/prod-008.webp;Artículos de limpieza;Esponja aluminio rollitos x6
+9;prod-009;imagenes-productos/productos/prod-009.webp;Artículos de limpieza;Fibra natural X2
+10;prod-010;imagenes-productos/productos/prod-010.webp;Artículos de limpieza;Paño de piso grande
+11;prod-011;imagenes-productos/productos/prod-011.webp;Artículos de limpieza;Paño microfibra 50x55
+12;prod-012;imagenes-productos/productos/prod-012.webp;Artículos de limpieza;Fregón algodón
+13;prod-013;imagenes-productos/productos/prod-013.webp;Artículos de limpieza;Fregón de microfibra Duramás 32x32
+14;prod-014;imagenes-productos/productos/prod-014.webp;Artículos de limpieza;Repasador color 50x60
+15;prod-015;imagenes-productos/productos/prod-015.webp;Artículos de limpieza;Franela mediana 30x40
+16;prod-016;imagenes-productos/productos/prod-016.webp;Artículos de limpieza;Pala con mango
+17;prod-017;imagenes-productos/productos/prod-017.webp;Artículos de limpieza;Pala con cepillo
+18;prod-018;imagenes-productos/productos/prod-018.webp;Artículos de limpieza;Escoba IDEAL clásica
+19;prod-019;imagenes-productos/productos/prod-019.webp;Artículos de limpieza;Escoba Blanco y negro
+20;prod-020;imagenes-productos/productos/prod-020.webp;Artículos de limpieza;Escoba Charmosa
+21;prod-021;imagenes-productos/productos/prod-021.webp;Artículos de limpieza;Escoba de jardín
+22;prod-022;imagenes-productos/productos/prod-022.webp;Artículos de limpieza;Escobillon Mileva
+23;prod-023;imagenes-productos/productos/prod-023.webp;Artículos de limpieza;Cabo de madera
+24;prod-024;imagenes-productos/productos/prod-024.webp;Artículos de limpieza;Lampazo 30cm
+25;prod-025;imagenes-productos/productos/prod-025.webp;Artículos de limpieza;Lampazo reforzado 34cm
+26;prod-026;imagenes-productos/productos/prod-026.webp;Artículos de limpieza;Lampazo reforzado 34cm con cabo
+27;prod-027;imagenes-productos/productos/prod-027.webp;Artículos de limpieza;Sopapa
+28;prod-028;imagenes-productos/productos/prod-028.webp;Artículos de limpieza;Sopapa de cocina
+29;prod-029;imagenes-productos/productos/prod-029.webp;Artículos de limpieza;Cepillo de ropa
+30;prod-030;imagenes-productos/productos/prod-030.webp;Artículos de limpieza;Gatillo pulverizador
+31;prod-031;imagenes-productos/productos/prod-031.webp;Artículos de limpieza;Palillos plástico docena
+32;prod-032;imagenes-productos/productos/prod-032.webp;Artículos de limpieza;Palillos madera docena
+33;prod-033;imagenes-productos/productos/prod-033.webp;Artículos de limpieza;Guantes de nitrilo x12
+34;prod-034;imagenes-productos/productos/prod-034.webp;Artículos de limpieza;Guantes super resistentes SINTALC
+35;prod-035;imagenes-productos/productos/prod-035.webp;Artículos de limpieza;Repuesto de fregona algodón Ideal
+36;prod-036;imagenes-productos/productos/prod-036.webp;Artículos de limpieza;Set de balde, escurridor y fregona
+37;prod-037;imagenes-productos/productos/prod-037.webp;Artículos de limpieza;Set balde escurridor giratorio con mopa de repuesto
+38;prod-038;imagenes-productos/productos/prod-038.webp;Artículos de limpieza;Repuesto Set giratorio (cabo y mopa)
+39;prod-039;imagenes-productos/productos/prod-039.webp;Artículos de limpieza;Repuesto de mopa para set giratorio
+40;prod-040;imagenes-productos/productos/prod-040.webp;Productos de limpieza;Jabón en polvo espuma controlada 800 g
+41;prod-041;imagenes-productos/productos/prod-041.webp;Productos de limpieza;Jabón en polvo espuma controlada 5 kg
+42;prod-042;imagenes-productos/productos/prod-042.webp;Productos de limpieza;Jabón líquido espuma controlada 900 cc
+43;prod-043;imagenes-productos/productos/prod-043.webp;Productos de limpieza;Jabón líquido espuma controlada 3 L
+44;prod-044;imagenes-productos/productos/prod-044.webp;Productos de limpieza;Jabón líquido espuma controlada 5 L
+45;prod-045;imagenes-productos/productos/prod-045.webp;Productos de limpieza;Suavizante Bonsai 1 L
+46;prod-046;imagenes-productos/productos/prod-046.webp;Productos de limpieza;Suavizante Bonsai 3 L
+47;prod-047;imagenes-productos/productos/prod-047.webp;Productos de limpieza;Suavizante Bonsai 5 L
+48;prod-048;imagenes-productos/productos/prod-048.webp;Productos de limpieza;Perfumador de telas 250 cc
+49;prod-049;imagenes-productos/productos/prod-049.webp;Productos de limpieza;Perfumador de telas 1 L
+50;prod-050;imagenes-productos/productos/prod-050.webp;Productos de limpieza;Jabón de manos líquido 500 cc
+51;prod-051;imagenes-productos/productos/prod-051.webp;Productos de limpieza;Jabón de manos líquido 1 L
+52;prod-052;imagenes-productos/productos/prod-052.webp;Productos de limpieza;Jabón de manos líquido 3 L
+53;prod-053;imagenes-productos/productos/prod-053.webp;Productos de limpieza;Jabón de manos líquido 5 L
+54;prod-054;imagenes-productos/productos/prod-054.webp;Productos de limpieza;Amonio cuaternario (antibacterial) 1 L
+55;prod-055;imagenes-productos/productos/prod-055.webp;Productos de limpieza;Amonio cuaternario (antibacterial) 3 L
+56;prod-056;imagenes-productos/productos/prod-056.webp;Productos de limpieza;Amonio cuaternario (antibacterial) 5 L
+57;prod-057;imagenes-productos/productos/prod-057.webp;Productos de limpieza;Detergente de cocina 1 L
+58;prod-058;imagenes-productos/productos/prod-058.webp;Productos de limpieza;Detergente de cocina 3 L
+59;prod-059;imagenes-productos/productos/prod-059.webp;Productos de limpieza;Detergente de cocina 5 L
+60;prod-060;imagenes-productos/productos/prod-060.webp;Productos de limpieza;Desengrasante cítrico 500 cc
+61;prod-061;imagenes-productos/productos/prod-061.webp;Productos de limpieza;Desengrasante cítrico 1 L
+62;prod-062;imagenes-productos/productos/prod-062.webp;Productos de limpieza;Desengrasante cítrico 3 L
+63;prod-063;imagenes-productos/productos/prod-063.webp;Productos de limpieza;Desengrasante cítrico 5 L
+64;prod-064;imagenes-productos/productos/prod-064.webp;Productos de limpieza;Limpiador desodorante 1 L
+65;prod-065;imagenes-productos/productos/prod-065.webp;Productos de limpieza;Limpiador desodorante 3 L
+66;prod-066;imagenes-productos/productos/prod-066.webp;Productos de limpieza;Limpiador desodorante 5 L
+67;prod-067;imagenes-productos/productos/prod-067.webp;Productos de limpieza;Solución de hipoclorito de sodio 1 L
+68;prod-068;imagenes-productos/productos/prod-068.webp;Productos de limpieza;Solución de hipoclorito de sodio 2 L
+69;prod-069;imagenes-productos/productos/prod-069.webp;Productos de limpieza;Solución de hipoclorito de sodio 3 L
+70;prod-070;imagenes-productos/productos/prod-070.webp;Productos de limpieza;Solución de hipoclorito de sodio 5 L
+71;prod-071;imagenes-productos/productos/prod-071.webp;Productos de limpieza;Limpiavidrios Bonsai 1 L
+72;prod-072;imagenes-productos/productos/prod-072.webp;Productos de limpieza;Limpiavidrios Bonsai 3 L
+73;prod-073;imagenes-productos/productos/prod-073.webp;Productos de limpieza;Limpiador cremoso Bonsai 650 cc
+74;prod-074;imagenes-productos/productos/prod-074.webp;Bolsas de basura Herradura;50x56 - 30 unidades
+75;prod-075;imagenes-productos/productos/prod-075.webp;Bolsas de basura Herradura;85x105 - 10 unidades
+76;prod-076;imagenes-productos/productos/prod-076.webp;Plásticos;Balde 9 Litros
+77;prod-077;imagenes-productos/productos/prod-077.webp;Plásticos;Balde negro
+78;prod-078;imagenes-productos/productos/prod-078.webp;Plásticos;Escobilla de baño con base
+79;prod-079;imagenes-productos/productos/prod-079.webp;Plásticos;Tacho de residuos c/pedal
+80;prod-080;imagenes-productos/productos/prod-080.webp;Plásticos;Basurero tapa vaiven 27Lts
+81;prod-081;imagenes-productos/productos/prod-081.webp;Plásticos;Basurero tapa vaiven 7Lts
+82;prod-082;imagenes-productos/productos/prod-082.webp;Plásticos;Cesto de ropa con tapa 44x43x60
+83;prod-083;imagenes-productos/productos/prod-083.webp;Plásticos;Canasto para ropa (tendedero)
+84;prod-084;imagenes-productos/productos/prod-084.webp;Plásticos;Cuerda de nylon para ropa 10M
+85;prod-085;imagenes-productos/productos/prod-085.webp;Plásticos;Palmeta matamoscas
+86;prod-086;imagenes-productos/productos/prod-086.webp;Plásticos;Dispensador de jabón
+87;prod-087;imagenes-productos/productos/prod-087.webp;Plásticos;Embudo 12cm
+88;prod-088;imagenes-productos/productos/prod-088.webp;Plásticos;Lampazo limpiavidrios extensible
+89;prod-089;imagenes-productos/productos/prod-089.webp;Plásticos;Palangana 28x10
+90;prod-090;imagenes-productos/productos/prod-090.webp;Plásticos;Palangana 32x11
+91;prod-091;imagenes-productos/productos/prod-091.webp;Plásticos;Palangana 36x11
+92;prod-092;imagenes-productos/productos/prod-092.webp;Plásticos;Palangana 41x24 37 litros
+93;prod-093;imagenes-productos/productos/prod-093.webp;Macetas;Maceta Terracota 13 cm diámetro
+94;prod-094;imagenes-productos/productos/prod-094.webp;Macetas;Maceta Terracota 17 cm diámetro
+95;prod-095;imagenes-productos/productos/prod-095.webp;Macetas;Maceta Terracota 22 cm diámetro
+96;prod-096;imagenes-productos/productos/prod-096.webp;Macetas;Maceta Terracota 28 cm diámetro
+97;prod-097;imagenes-productos/productos/prod-097.webp;Macetas;Maceta Terracota 35 cm diámetro
+98;prod-098;imagenes-productos/productos/prod-098.webp;Papeles;Higienol Texturado 4x30 Metros
+99;prod-099;imagenes-productos/productos/prod-099.webp;Papeles;Higienol doble hoja 4x30 Metros
+100;prod-100;imagenes-productos/productos/prod-100.webp;Papeles;Higienol doble hoja 8x30 Metros
+101;prod-101;imagenes-productos/productos/prod-101.webp;Papeles;Toalla de cocina Nova
+102;prod-102;imagenes-productos/productos/prod-102.webp;Papeles;3 rollos x 50 paños
+103;prod-103;imagenes-productos/productos/prod-103.webp;Papeles;Servilleta tamaño mesa x50
+104;prod-104;imagenes-productos/productos/prod-104.webp;Papeles;Pañuelos Elite 10 paq. x10
+105;prod-105;imagenes-productos/productos/prod-105.webp;Papeles;Papel aluminio 30cm x 7.5m
+106;prod-106;imagenes-productos/productos/prod-106.webp;Papeles;Papel manteca 30cm x 7.5m
+107;prod-107;imagenes-productos/productos/prod-107.webp;Papeles;Film adherente 28cm x 50m
+108;prod-108;imagenes-productos/productos/prod-108.webp;Insecticidas;Raid moscas y mosquitos sin olor
+109;prod-109;imagenes-productos/productos/prod-109.webp;Insecticidas;Jupiter max sin olor
+110;prod-110;imagenes-productos/productos/prod-110.webp;Insecticidas;Espiral Jupiter tradicional caja x10
+111;prod-111;imagenes-productos/productos/prod-111.webp;Insecticidas;Espiral Jupiter perfumada caja x10
+112;prod-112;imagenes-productos/productos/prod-112.webp;Insecticidas;Repelente Jupiter aerosol 165cm³
+113;prod-113;imagenes-productos/productos/prod-113.webp;Insecticidas;Repelente Jupiter crema 80gr
+114;prod-114;imagenes-productos/productos/prod-114.webp;Insecticidas;Pastillas para mosquitos Jupiter
+115;prod-115;imagenes-productos/productos/prod-115.webp;Insecticidas;Aparato para pastillas Jupiter
+116;prod-116;imagenes-productos/productos/prod-116.webp;Varios;Desodorante en aerosol (Lavanda, Jazmín, Vainilla y Brisas de bebé)
+117;prod-117;imagenes-productos/productos/prod-117.webp;Varios;Desinfectante en aerosol Original y Lavanda
+118;prod-118;imagenes-productos/productos/prod-118.webp;Varios;Alcohol en gel Jupiter 250cc
+119;prod-119;imagenes-productos/productos/prod-119.webp;Varios;Pastilla inodoro
+120;prod-120;imagenes-productos/productos/prod-120.webp;Varios;Lustramuebles Jupiter 360ml
+121;prod-121;imagenes-productos/productos/prod-121.webp;Varios;Protector solar factor 50 180g
+122;prod-122;imagenes-productos/productos/prod-122.webp;Varios;Quitamanchas en barra 75g
+123;prod-123;imagenes-productos/productos/prod-123.webp;Varios;Percha aromatizadora
+124;prod-124;imagenes-productos/productos/prod-124.webp;Varios;Burlete para puerta 95cm
+125;prod-125;imagenes-productos/productos/prod-125.webp;Varios;Alfombra de baño 33x65cm
+126;prod-126;imagenes-productos/productos/prod-126.webp;Varios;Bicarbonato de sodio 1KG.
+127;prod-127;imagenes-productos/productos/prod-127.webp;Esponjas ecológicas;Esponja de baño luffa
+128;prod-128;imagenes-productos/productos/prod-128.webp;Esponjas ecológicas;Esponja ovalada doble luffa
+129;prod-129;imagenes-productos/productos/prod-129.webp;Esponjas ecológicas;Esponja lavavajillas luffa
+130;prod-130;imagenes-productos/productos/prod-130.webp;Otros;Cera al agua 450 cc.
+131;prod-131;imagenes-productos/productos/prod-131.webp;Otros;Cera al agua 1 lt
+132;prod-132;imagenes-productos/productos/prod-132.webp;Otros;Cera piso de madera roble claro
+133;prod-133;imagenes-productos/productos/prod-133.webp;Otros;Cera piso de madera roble oscuro
