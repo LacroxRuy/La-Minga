@@ -1,15 +1,17 @@
-const CACHE = "la-minga-clasico-ids-noticias-ofertas-v11";
+const CACHE = "la-minga-destacados-v12";
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=11",
-  "./config.js?v=10",
-  "./productos.js?v=10",
-  "./app.js?v=11",
+  "./styles.css?v=12",
+  "./config.js?v=12",
+  "./productos.js?v=12",
+  "./app.js?v=12",
   "./manifest.webmanifest",
   "./icon.svg",
   "./og-catalogo.png",
+  "./logo-la-minga.png",
+  "./DESTACADOS.csv",
   "./imagenes-productos/productos/sin-imagen.webp"
 ];
 
@@ -40,7 +42,9 @@ self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
   const isMutableImage =
     url.pathname.includes("/imagenes-novedades/") ||
-    url.pathname.includes("/imagenes-productos/");
+    url.pathname.includes("/imagenes-productos/") ||
+    url.pathname.includes("/logo-la-minga.") ||
+    url.pathname.endsWith("/DESTACADOS.csv");
 
   if (isMutableImage) {
     event.respondWith(

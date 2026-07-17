@@ -169,3 +169,48 @@ CORRECCIÓN DE PRODUCTOS Y VISOR
 - El botón “Ampliar” quedó dentro de la imagen, abajo a la derecha.
 - También se puede abrir el visor tocando directamente la imagen.
 - El zoom se controla con +, −, 100%, doble toque y rueda del mouse.
+
+
+AJUSTES DE PORTADA Y DESTACADOS
+------------------------------
+
+- Se eliminó “Lista de precios 2026”.
+- Se agregó el logo de la Cooperativa al encabezado y antes del título.
+- Los botones quedaron como Noticias y Ofertas, Catálogo de Productos y Consultas.
+- Consultas conserva el mensaje precargado de WhatsApp.
+- Envíos a domicilio y Compra mínima quedaron al final.
+- Se eliminó el beneficio Pedidos por WhatsApp.
+- Se actualizó el pie con correo, Instagram y descripción institucional.
+
+GESTIÓN DE DESTACADOS
+---------------------
+
+Editar el archivo DESTACADOS.csv:
+
+ID producto;Orden;Activo
+57;1;SI
+18;2;SI
+76;3;SI
+1;4;SI
+
+El ID se consulta en MAPA_IMAGENES_PRODUCTOS.csv.
+“Orden” define la posición y “Activo” admite SI o NO.
+
+Al tocar la imagen de un destacado, la página abre el catálogo y lleva
+directamente al producto correspondiente.
+
+FORMATOS DEL LOGO
+-----------------
+
+La web acepta estos nombres en la raíz:
+
+logo-la-minga.png
+logo-la-minga.webp
+logo-la-minga.jpg
+logo-la-minga.jpeg
+logo-la-minga.svg
+logo-la-minga.gif
+logo-la-minga.avif
+
+Para cambiar de formato, eliminar el archivo anterior y subir el nuevo
+manteniendo el nombre logo-la-minga.

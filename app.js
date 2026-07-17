@@ -28,7 +28,8 @@
     viewerDragStartY: 0,
     viewerStartX: 0,
     viewerStartY: 0,
-    viewerLastTap: 0
+    viewerLastTap: 0,
+    featuredIds: []
   };
 
   const categoryIcons = {
@@ -100,7 +101,9 @@
     zoomResetButton: $("#zoomResetButton"),
     zoomInButton: $("#zoomInButton"),
     viewerPrev: $("#viewerPrev"),
-    viewerNext: $("#viewerNext")
+    viewerNext: $("#viewerNext"),
+    featuredGrid: $("#featuredGrid"),
+    featuredEmpty: $("#featuredEmpty")
   };
 
   const money = value =>
@@ -139,6 +142,178 @@
 
   function productImagePath(product) {
     return `imagenes-productos/productos/${product.imagenId}.webp`;
+  }
+
+
+  function loadFlexibleLogos() {
+    const candidates = [
+      "logo-la-minga.png",
+      "logo-la-minga.webp",
+      "logo-la-minga.jpg",
+      "logo-la-minga.jpeg",
+      "logo-la-minga.svg",
+      "logo-la-minga.gif",
+      "logo-la-minga.avif"
+    ];
+
+    document.querySelectorAll("[data-flex-logo]").forEach(image => {
+      let candidateIndex = 0;
+
+      const tryNext = () => {
+        if (candidateIndex >= candidates.length) {
+          image.hidden = true;
+          return;
+        }
+
+        const candidate = candidates[candidateIndex];
+        candidateIndex += 1;
+        image.src = `${candidate}?logo=${Date.now()}`;
+      };
+
+      image.addEventListener("error", tryNext);
+      image.addEventListener("load", () => {
+        image.hidden = false;
+      });
+
+      tryNext();
+    });
+  }
+
+  function parseFeaturedCsv(text) {
+    const lines = String(text || "")
+      .replace(/^\uFEFF/, "")
+      .split(/\r?\n/)
+      .map(line => line.trim())
+      .filter(Boolean);
+
+    if (lines.length < 2) return [];
+
+    const delimiter = lines[0].includes(";") ? ";" : ",";
+    const headers = lines[0]
+      .split(delimiter)
+      .map(header => normalize(header.trim()));
+
+    const idIndex = headers.findIndex(header =>
+      header === "id producto" ||
+      header === "id" ||
+      header.includes("id producto")
+    );
+    const orderIndex = headers.findIndex(header =>
+      header === "orden" || header.includes("orden")
+    );
+    const activeIndex = headers.findIndex(header =>
+      header === "activo" || header.includes("activo")
+    );
+
+    if (idIndex < 0) return [];
+
+    return lines
+      .slice(1)
+      .map((line, rowIndex) => {
+        const cells = line.split(delimiter).map(cell => cell.trim());
+        const id = Number(cells[idIndex]);
+        const order = orderIndex >= 0
+          ? Number(cells[orderIndex]) || rowIndex + 1
+          : rowIndex + 1;
+        const activeValue = activeIndex >= 0
+          ? normalize(cells[activeIndex])
+          : "si";
+        const active = !["no", "0", "false", "inactivo"].includes(activeValue);
+
+        return { id, order, active };
+      })
+      .filter(item => Number.isInteger(item.id) && item.active)
+      .sort((a, b) => a.order - b.order)
+      .map(item => item.id);
+  }
+
+  async function loadFeaturedProducts() {
+    let ids = [];
+
+    try {
+      const response = await fetch(
+        `DESTACADOS.csv?actualizacion=${Date.now()}`,
+        { cache: "no-store" }
+      );
+
+      if (response.ok) {
+        ids = parseFeaturedCsv(await response.text());
+      }
+    } catch {
+      ids = [];
+    }
+
+    if (!ids.length) {
+      ids = [57, 18, 76, 1];
+    }
+
+    state.featuredIds = ids;
+    renderFeaturedProducts();
+  }
+
+  function renderFeaturedProducts() {
+    elements.featuredGrid.innerHTML = "";
+
+    const selected = state.featuredIds
+      .map(id => products.find(product => product.id === Number(id)))
+      .filter(Boolean);
+
+    elements.featuredEmpty.hidden = selected.length > 0;
+
+    selected.forEach(product => {
+      const item = document.createElement("article");
+      item.className = "featured-card";
+
+      item.innerHTML = `
+        <a
+          class="featured-image-link"
+          href="#producto-${product.id}"
+          data-featured-product="${product.id}"
+          aria-label="Ver ${escapeHtml(product.nombre)} en el catálogo"
+        >
+          <img
+            src="${productImagePath(product)}"
+            alt="${escapeHtml(product.nombre)}"
+            loading="eager"
+            decoding="async"
+            data-featured-image
+          >
+        </a>
+        <div class="featured-product-info">
+          <b>${escapeHtml(product.nombre)}</b>
+          <span>${money(product.precio)}</span>
+        </div>
+      `;
+
+      elements.featuredGrid.appendChild(item);
+    });
+  }
+
+  function openFeaturedProduct(productId) {
+    state.query = "";
+    state.category = "";
+    elements.search.value = "";
+    elements.select.value = "";
+
+    [...elements.chips.querySelectorAll("button")].forEach(button => {
+      button.classList.toggle("active", button.dataset.category === "");
+    });
+
+    renderProducts();
+    showProductsView(false);
+
+    requestAnimationFrame(() => {
+      const card = document.getElementById(`producto-${productId}`);
+      if (!card) return;
+
+      card.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      card.classList.add("product-highlighted");
+      setTimeout(() => card.classList.remove("product-highlighted"), 2200);
+    });
   }
 
   function getCartRows() {
@@ -241,6 +416,8 @@
     visible.forEach(product => {
       const card = document.createElement("article");
       card.className = "product-card";
+      card.id = `producto-${product.id}`;
+      card.dataset.productId = product.id;
 
       card.innerHTML = `
         ${product.novedad ? '<span class="new-badge">NUEVO</span>' : ""}
@@ -705,6 +882,27 @@
     () => showProductsView(true)
   );
 
+
+  elements.featuredGrid.addEventListener("click", event => {
+    const link = event.target.closest("[data-featured-product]");
+    if (!link) return;
+
+    event.preventDefault();
+    openFeaturedProduct(Number(link.dataset.featuredProduct));
+  });
+
+  elements.featuredGrid.addEventListener(
+    "error",
+    event => {
+      if (!event.target.matches("[data-featured-image]")) return;
+      if (event.target.dataset.fallbackApplied === "true") return;
+
+      event.target.dataset.fallbackApplied = "true";
+      event.target.src = "imagenes-productos/productos/sin-imagen.webp";
+    },
+    true
+  );
+
   elements.search.addEventListener("input", event => {
     state.query = event.target.value;
     renderProducts();
@@ -953,6 +1151,8 @@
 
   elements.priceNotice.textContent = config.avisoPrecios;
 
+  loadFlexibleLogos();
+  loadFeaturedProducts();
   renderCategories();
   renderProducts();
   renderCart();
@@ -963,7 +1163,7 @@
     location.protocol.startsWith("http")
   ) {
     navigator.serviceWorker
-      .register("sw.js?v=11", { updateViaCache: "none" })
+      .register("sw.js?v=12", { updateViaCache: "none" })
       .then(registration => registration.update())
       .catch(() => {});
   }
