@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://lacroxruy.github.io/catalogo-la-minga/og-catalogo.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
   <header class="topbar">
@@ -80,7 +80,7 @@
     <section class="news-section" id="novedades" hidden>
       <div class="section-heading">
         <div>
-          <span class="eyebrow">NOVEDADES Y PROMOCIONES</span>
+          <span class="eyebrow">NOTICIAS Y OFERTAS</span>
           <h2>Lo último de La Minga</h2>
         </div>
         <p id="newsCount"></p>
@@ -88,26 +88,26 @@
 
       <div class="news-loading" id="newsLoading">
         <span class="loading-spinner" aria-hidden="true"></span>
-        <p>Cargando novedades…</p>
+        <p>Cargando noticias y ofertas…</p>
       </div>
 
       <div class="news-empty" id="newsEmpty" hidden style="display:none">
         <span>🖼️</span>
-        <h3>Todavía no hay novedades cargadas</h3>
+        <h3>Todavía no hay noticias ni ofertas cargadas</h3>
         <p>Agregá archivos en la carpeta <b>imagenes-novedades</b>.</p>
       </div>
 
       <div class="carousel-shell" id="carouselShell" hidden style="display:none">
-        <button class="carousel-arrow carousel-prev" id="carouselPrev" type="button" aria-label="Novedad anterior">‹</button>
+        <button class="carousel-arrow carousel-prev" id="carouselPrev" type="button" aria-label="Noticia u oferta anterior">‹</button>
 
         <div class="carousel-viewport" id="carouselViewport">
           <div class="carousel-track" id="carouselTrack"></div>
         </div>
 
-        <button class="carousel-arrow carousel-next" id="carouselNext" type="button" aria-label="Novedad siguiente">›</button>
+        <button class="carousel-arrow carousel-next" id="carouselNext" type="button" aria-label="Noticia u oferta siguiente">›</button>
       </div>
 
-      <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar novedad" style="display:none"></div>
+      <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar noticia u oferta" style="display:none"></div>
 
       <div class="news-footer-action">
         <button class="primary-link hero-action-button" id="newsBackToProducts" type="button">
@@ -246,6 +246,28 @@
 
   <script src="config.js?v=5"></script>
   <script src="productos.js?v=5"></script>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=9"></script>
+
+  <div class="image-viewer" id="imageViewer" hidden aria-hidden="true">
+    <div class="image-viewer-backdrop" id="imageViewerBackdrop"></div>
+    <div class="image-viewer-panel" role="dialog" aria-modal="true" aria-label="Visor de noticias y ofertas">
+      <div class="image-viewer-toolbar">
+        <div class="image-viewer-counter" id="imageViewerCounter">1 / 1</div>
+        <div class="image-viewer-controls">
+          <button type="button" id="zoomOutButton" aria-label="Alejar imagen" title="Alejar">−</button>
+          <button type="button" id="zoomResetButton" aria-label="Restablecer zoom" title="Restablecer">100%</button>
+          <button type="button" id="zoomInButton" aria-label="Acercar imagen" title="Acercar">+</button>
+          <button type="button" id="closeImageViewer" aria-label="Cerrar visor" title="Cerrar">✕</button>
+        </div>
+      </div>
+      <button class="viewer-arrow viewer-prev" id="viewerPrev" type="button" aria-label="Noticia u oferta anterior">‹</button>
+      <div class="image-viewer-stage" id="imageViewerStage">
+        <img id="imageViewerImage" src="" alt="Noticia u oferta ampliada" draggable="false">
+      </div>
+      <button class="viewer-arrow viewer-next" id="viewerNext" type="button" aria-label="Noticia u oferta siguiente">›</button>
+      <div class="image-viewer-help">Tocá dos veces o usá + y − para ampliar. Arrastrá la imagen cuando tenga zoom.</div>
+    </div>
+  </div>
+
 </body>
 </html>

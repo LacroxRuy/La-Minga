@@ -1,5 +1,5 @@
 window.CATALOGO_CONFIG = {
-  version: "Clásico con ID y Novedades",
+  version: "Clásico con ID, Noticias y Ofertas",
   negocio: "Cooperativa La Minga · Bonsai",
   titulo: "Catálogo 2026",
   whatsapp: "59899370519",

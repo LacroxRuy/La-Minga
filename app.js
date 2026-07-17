@@ -18,7 +18,17 @@
     dragging: false,
     dragStartX: 0,
     dragDeltaX: 0,
-    newsSessionToken: Date.now()
+    newsSessionToken: Date.now(),
+    viewerIndex: 0,
+    viewerScale: 1,
+    viewerX: 0,
+    viewerY: 0,
+    viewerDragging: false,
+    viewerDragStartX: 0,
+    viewerDragStartY: 0,
+    viewerStartX: 0,
+    viewerStartY: 0,
+    viewerLastTap: 0
   };
 
   const categoryIcons = {
@@ -79,7 +89,18 @@
     addressLabel: $("#addressLabel"),
     customerAddress: $("#customerAddress"),
     toast: $("#toast"),
-    priceNotice: $("#priceNotice")
+    priceNotice: $("#priceNotice"),
+    imageViewer: $("#imageViewer"),
+    imageViewerBackdrop: $("#imageViewerBackdrop"),
+    imageViewerStage: $("#imageViewerStage"),
+    imageViewerImage: $("#imageViewerImage"),
+    imageViewerCounter: $("#imageViewerCounter"),
+    closeImageViewer: $("#closeImageViewer"),
+    zoomOutButton: $("#zoomOutButton"),
+    zoomResetButton: $("#zoomResetButton"),
+    zoomInButton: $("#zoomInButton"),
+    viewerPrev: $("#viewerPrev"),
+    viewerNext: $("#viewerNext")
   };
 
   const money = value =>
@@ -314,7 +335,7 @@
           id: number,
           cleanPath,
           url: checkedPath,
-          title: `Novedad ${number}`
+          title: `Noticia u oferta ${number}`
         };
       }
     }
@@ -376,10 +397,18 @@
       const slide = document.createElement("article");
       slide.className = "promo-slide";
       slide.innerHTML = `
+        <button
+          class="open-news-image"
+          type="button"
+          data-open-news="${index}"
+          aria-label="Ampliar ${escapeHtml(item.title)}"
+          title="Ver en pantalla completa"
+        >⛶</button>
         <img
           src="${item.url}"
           alt="${escapeHtml(item.title)}"
           draggable="false"
+          data-open-news="${index}"
         >
       `;
       elements.carouselTrack.appendChild(slide);
@@ -388,7 +417,7 @@
       dot.type = "button";
       dot.className = "carousel-dot";
       dot.dataset.slide = index;
-      dot.setAttribute("aria-label", `Ver novedad ${index + 1}`);
+      dot.setAttribute("aria-label", `Ver noticia u oferta ${index + 1}`);
       elements.carouselDots.appendChild(dot);
     });
 
@@ -446,6 +475,67 @@
 
   function restartCarouselTimer() {
     startCarouselTimer();
+  }
+
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function updateViewerTransform() {
+    const scale = state.viewerScale;
+    const maxX = Math.max(0, (elements.imageViewerImage.clientWidth * scale - elements.imageViewerStage.clientWidth) / 2);
+    const maxY = Math.max(0, (elements.imageViewerImage.clientHeight * scale - elements.imageViewerStage.clientHeight) / 2);
+    state.viewerX = clamp(state.viewerX, -maxX, maxX);
+    state.viewerY = clamp(state.viewerY, -maxY, maxY);
+    elements.imageViewerImage.style.transform = `translate(${state.viewerX}px, ${state.viewerY}px) scale(${scale})`;
+    elements.zoomResetButton.textContent = `${Math.round(scale * 100)}%`;
+  }
+
+  function resetViewerZoom() {
+    state.viewerScale = 1; state.viewerX = 0; state.viewerY = 0; updateViewerTransform();
+  }
+
+  function setViewerZoom(nextScale) {
+    state.viewerScale = clamp(nextScale, 1, 5);
+    if (state.viewerScale === 1) { state.viewerX = 0; state.viewerY = 0; }
+    updateViewerTransform();
+  }
+
+  function renderViewerImage() {
+    if (!state.news.length) return;
+    state.viewerIndex = (state.viewerIndex + state.news.length) % state.news.length;
+    const item = state.news[state.viewerIndex];
+    elements.imageViewerImage.src = item.url;
+    elements.imageViewerImage.alt = item.title;
+    elements.imageViewerCounter.textContent = `${state.viewerIndex + 1} / ${state.news.length}`;
+    const multiple = state.news.length > 1;
+    elements.viewerPrev.hidden = !multiple;
+    elements.viewerNext.hidden = !multiple;
+    resetViewerZoom();
+  }
+
+  function openImageViewer(index) {
+    state.viewerIndex = Number(index) || 0;
+    renderViewerImage();
+    elements.imageViewer.hidden = false;
+    elements.imageViewer.setAttribute("aria-hidden", "false");
+    document.body.classList.add("image-viewer-open");
+    stopCarouselTimer();
+    requestAnimationFrame(() => elements.closeImageViewer.focus());
+  }
+
+  function closeImageViewer() {
+    elements.imageViewer.hidden = true;
+    elements.imageViewer.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("image-viewer-open");
+    resetViewerZoom();
+    if (!elements.news.hidden) startCarouselTimer();
+  }
+
+  function changeViewerImage(delta) {
+    state.viewerIndex += delta;
+    renderViewerImage();
   }
 
   function addItem(id) {
@@ -785,11 +875,73 @@
     finishCarouselDrag
   );
 
+
+  elements.carouselTrack.addEventListener("click", event => {
+    const target = event.target.closest("[data-open-news]");
+    if (!target) return;
+    openImageViewer(Number(target.dataset.openNews));
+  });
+
+  elements.closeImageViewer.addEventListener("click", closeImageViewer);
+  elements.imageViewerBackdrop.addEventListener("click", closeImageViewer);
+  elements.zoomInButton.addEventListener("click", () => setViewerZoom(state.viewerScale + .35));
+  elements.zoomOutButton.addEventListener("click", () => setViewerZoom(state.viewerScale - .35));
+  elements.zoomResetButton.addEventListener("click", resetViewerZoom);
+  elements.viewerPrev.addEventListener("click", () => changeViewerImage(-1));
+  elements.viewerNext.addEventListener("click", () => changeViewerImage(1));
+
+  elements.imageViewerStage.addEventListener("wheel", event => {
+    event.preventDefault();
+    setViewerZoom(state.viewerScale + (event.deltaY < 0 ? .25 : -.25));
+  }, { passive: false });
+
+  elements.imageViewerStage.addEventListener("pointerdown", event => {
+    const now = Date.now();
+    if (now - state.viewerLastTap < 320) {
+      setViewerZoom(state.viewerScale > 1 ? 1 : 2.25);
+      state.viewerLastTap = 0;
+      return;
+    }
+    state.viewerLastTap = now;
+    if (state.viewerScale <= 1) return;
+    state.viewerDragging = true;
+    state.viewerDragStartX = event.clientX;
+    state.viewerDragStartY = event.clientY;
+    state.viewerStartX = state.viewerX;
+    state.viewerStartY = state.viewerY;
+    elements.imageViewerStage.classList.add("dragging");
+    elements.imageViewerStage.setPointerCapture(event.pointerId);
+  });
+
+  elements.imageViewerStage.addEventListener("pointermove", event => {
+    if (!state.viewerDragging) return;
+    state.viewerX = state.viewerStartX + (event.clientX - state.viewerDragStartX);
+    state.viewerY = state.viewerStartY + (event.clientY - state.viewerDragStartY);
+    updateViewerTransform();
+  });
+
+  function finishViewerDrag(event) {
+    if (!state.viewerDragging) return;
+    state.viewerDragging = false;
+    elements.imageViewerStage.classList.remove("dragging");
+    if (event && elements.imageViewerStage.hasPointerCapture(event.pointerId)) {
+      elements.imageViewerStage.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  elements.imageViewerStage.addEventListener("pointerup", finishViewerDrag);
+  elements.imageViewerStage.addEventListener("pointercancel", finishViewerDrag);
+
   document.addEventListener("keydown", event => {
-    if (
-      event.key === "Escape" &&
-      elements.drawer.classList.contains("open")
-    ) {
+    if (!elements.imageViewer.hidden) {
+      if (event.key === "Escape") { closeImageViewer(); return; }
+      if (event.key === "ArrowLeft") { changeViewerImage(-1); return; }
+      if (event.key === "ArrowRight") { changeViewerImage(1); return; }
+      if (event.key === "+" || event.key === "=") { setViewerZoom(state.viewerScale + .35); return; }
+      if (event.key === "-") { setViewerZoom(state.viewerScale - .35); return; }
+      if (event.key === "0") { resetViewerZoom(); return; }
+    }
+    if (event.key === "Escape" && elements.drawer.classList.contains("open")) {
       closeCart();
     }
   });
@@ -811,7 +963,7 @@
     location.protocol.startsWith("http")
   ) {
     navigator.serviceWorker
-      .register("sw.js?v=7", { updateViaCache: "none" })
+      .register("sw.js?v=9", { updateViaCache: "none" })
       .then(registration => registration.update())
       .catch(() => {});
   }
