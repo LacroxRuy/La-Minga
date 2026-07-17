@@ -128,3 +128,13 @@ IMPORTANTE SOBRE LA CACHÉ
 El Service Worker usa red primero para las imágenes de productos y novedades.
 Esto permite reemplazar o eliminar imágenes sin que la web conserve fácilmente
 copias antiguas.
+
+
+BOTÓN CONSULTAR
+---------------
+
+El botón Consultar abre WhatsApp con este texto precargado:
+
+Hola, quería consultarles acerca de:
+
+El cliente puede continuar escribiendo después de los dos puntos.
