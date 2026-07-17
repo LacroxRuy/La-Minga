@@ -865,24 +865,28 @@
     );
 
     return [
-      `Hola, quiero realizar un pedido en ${config.negocio}:`,
-      "",
-      ...itemLines,
-      "",
-      `*TOTAL: ${money(cartTotal())}*`,
-      "",
-      `Nombre: ${name}`,
-      `Entrega: ${delivery}`,
-      delivery === "Envío a domicilio"
-        ? `Dirección: ${address}`
-        : null,
-      `Pago: ${payment}`,
-      notes ? `Comentarios: ${notes}` : null,
-      "",
-      "Quedo a la espera de la confirmación. ¡Gracias!"
-    ]
-      .filter(line => line !== null)
-      .join("\n");
+  "Hola, ¿cómo están? Quisiera realizar un pedido:",
+  "",
+  ...itemLines,
+  "",
+  `*TOTAL: ${money(cartTotal())}*`,
+  "",
+  "────────────────",
+  `*Nombre:* ${name}`,
+  "────────────────",
+  `*Entrega:* ${delivery}`,
+  delivery === "Envío a domicilio"
+    ? `*Dirección:* ${address}`
+    : null,
+  "────────────────",
+  `*Pago:* ${payment}`,
+  notes ? `*Comentarios:* ${notes}` : null,
+  "────────────────",
+  "",
+  "Quedo a la espera de la confirmación. ¡Gracias!"
+]
+  .filter(line => line !== null)
+  .join("\n");
   }
 
   function validateOrder() {
