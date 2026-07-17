@@ -1,9 +1,9 @@
-const CACHE = "la-minga-clasico-ids-novedades-v5";
+const CACHE = "la-minga-clasico-ids-novedades-v6";
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=5",
+  "./styles.css?v=6",
   "./config.js?v=5",
   "./productos.js?v=5",
   "./app.js?v=5",
