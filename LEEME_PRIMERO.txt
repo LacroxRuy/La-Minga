@@ -214,3 +214,26 @@ logo-la-minga.avif
 
 Para cambiar de formato, eliminar el archivo anterior y subir el nuevo
 manteniendo el nombre logo-la-minga.
+
+
+AJUSTE DEL VISOR
+----------------
+
+- Se eliminó el texto “Ampliar” y el círculo verde.
+- El visor se abre tocando directamente la imagen.
+- Cuando está abierto, el botón Atrás del celular o navegador cierra
+  el visor sin abandonar el catálogo.
+- Ya no se incluyen archivos BAT.
+
+
+PEDIDO ANTERIOR Y CANCELACIÓN
+-----------------------------
+
+- Al tocar “Enviar pedido por WhatsApp”, el pedido se guarda localmente
+  como último pedido y el carrito actual se vacía.
+- Cuando el carrito queda vacío aparece “Cargar pedido anterior”.
+- El pedido anterior recupera productos, cantidades y datos del cliente.
+- “Cancelar pedido” vacía el carrito y limpia el formulario, después de
+  pedir confirmación.
+- El pedido anterior se guarda en localStorage del navegador. Permanece en
+  ese dispositivo y navegador hasta que se borren los datos del sitio.

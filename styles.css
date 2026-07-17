@@ -1146,3 +1146,39 @@ body.image-viewer-open { overflow: hidden; }
 .promo-slide img[data-open-news] {
   cursor: zoom-in;
 }
+
+
+/* ==========================================================
+   PEDIDO ANTERIOR Y CANCELACIÓN
+   ========================================================== */
+
+.previous-order-button,
+.cancel-order-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 9px;
+  padding: 11px 15px;
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.previous-order-button {
+  border: 1px solid rgba(9,107,50,.28);
+  background: #eaf6ee;
+  color: var(--green-dark);
+}
+
+.previous-order-button:hover {
+  background: #dff0e5;
+}
+
+.cancel-order-button {
+  border: 1px solid rgba(180,35,24,.28);
+  background: #fff5f4;
+  color: #a11d15;
+}
+
+.cancel-order-button:hover {
+  background: #fde9e7;
+}

@@ -4,6 +4,7 @@
   const config = window.CATALOGO_CONFIG;
   const products = Array.isArray(window.PRODUCTOS) ? window.PRODUCTOS : [];
   const storageKey = "la-minga-cart-v1";
+  const previousOrderKey = "la-minga-previous-order-v1";
   const noveltyExtensions = ["webp", "jpg", "jpeg", "png"];
   const maxNoveltyImages = 99;
 
@@ -86,6 +87,8 @@
     minProgress: $("#minimumProgress"),
     orderForm: $("#orderForm"),
     copyOrder: $("#copyOrder"),
+    cancelOrder: $("#cancelOrder"),
+    loadPreviousOrder: $("#loadPreviousOrder"),
     continueShopping: $("#continueShopping"),
     deliveryType: $("#deliveryType"),
     addressLabel: $("#addressLabel"),
@@ -315,6 +318,114 @@
       card.classList.add("product-highlighted");
       setTimeout(() => card.classList.remove("product-highlighted"), 2200);
     });
+  }
+
+
+  function getOrderFormData() {
+    return {
+      name: $("#customerName").value.trim(),
+      delivery: elements.deliveryType.value,
+      address: elements.customerAddress.value.trim(),
+      payment: $("#paymentType").value,
+      notes: $("#customerNotes").value.trim()
+    };
+  }
+
+  function readPreviousOrder() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(previousOrderKey));
+      return saved && typeof saved === "object" ? saved : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function updatePreviousOrderButton() {
+    elements.loadPreviousOrder.hidden = !readPreviousOrder();
+  }
+
+  function savePreviousOrder(message) {
+    const form = getOrderFormData();
+    const rows = getCartRows();
+
+    const previousOrder = {
+      version: 1,
+      savedAt: new Date().toISOString(),
+      message,
+      cart: Object.fromEntries(
+        rows.map(item => [String(item.id), item.qty])
+      ),
+      customer: form
+    };
+
+    localStorage.setItem(
+      previousOrderKey,
+      JSON.stringify(previousOrder)
+    );
+
+    updatePreviousOrderButton();
+  }
+
+  function updateDeliveryFields() {
+    const needsAddress =
+      elements.deliveryType.value === "Envío a domicilio";
+
+    elements.addressLabel.hidden = !needsAddress;
+    elements.customerAddress.required = needsAddress;
+  }
+
+  function clearCurrentOrder({ resetForm = true } = {}) {
+    state.cart = {};
+    saveCart();
+
+    if (resetForm) {
+      elements.orderForm.reset();
+      updateDeliveryFields();
+    }
+
+    renderCart();
+  }
+
+  function restorePreviousOrder() {
+    const previousOrder = readPreviousOrder();
+
+    if (!previousOrder || !previousOrder.cart) {
+      showToast("No hay un pedido anterior guardado");
+      updatePreviousOrderButton();
+      return;
+    }
+
+    const restoredCart = {};
+
+    Object.entries(previousOrder.cart).forEach(([id, qty]) => {
+      const productExists = products.some(
+        product => product.id === Number(id)
+      );
+
+      if (productExists && Number(qty) > 0) {
+        restoredCart[id] = Number(qty);
+      }
+    });
+
+    if (!Object.keys(restoredCart).length) {
+      showToast("Los productos del pedido anterior ya no están disponibles");
+      return;
+    }
+
+    state.cart = restoredCart;
+    saveCart();
+
+    const customer = previousOrder.customer || {};
+    $("#customerName").value = customer.name || "";
+    elements.deliveryType.value =
+      customer.delivery || "Envío a domicilio";
+    elements.customerAddress.value = customer.address || "";
+    $("#paymentType").value = customer.payment || "A coordinar";
+    $("#customerNotes").value = customer.notes || "";
+
+    updateDeliveryFields();
+    renderCart();
+    showToast("Pedido anterior cargado");
   }
 
   function getCartRows() {
@@ -775,6 +886,7 @@
     const total = cartTotal();
     const quantity = cartQuantity();
 
+    updatePreviousOrderButton();
     elements.cartCount.textContent = quantity;
     elements.cartItems.innerHTML = "";
     elements.cartEmpty.hidden = rows.length > 0;
@@ -853,11 +965,8 @@
 
   function buildOrderText() {
     const rows = getCartRows();
-    const name = $("#customerName").value.trim();
-    const delivery = elements.deliveryType.value;
-    const address = elements.customerAddress.value.trim();
-    const payment = $("#paymentType").value;
-    const notes = $("#customerNotes").value.trim();
+    const { name, delivery, address, payment, notes } =
+      getOrderFormData();
 
     const itemLines = rows.map(
       item =>
@@ -865,28 +974,28 @@
     );
 
     return [
-  "Hola, ¿cómo están? Quisiera realizar un pedido:",
-  "",
-  ...itemLines,
-  "",
-  `*TOTAL: ${money(cartTotal())}*`,
-  "",
-  "────────────────",
-  `*Nombre:* ${name}`,
-  "────────────────",
-  `*Entrega:* ${delivery}`,
-  delivery === "Envío a domicilio"
-    ? `*Dirección:* ${address}`
-    : null,
-  "────────────────",
-  `*Pago:* ${payment}`,
-  notes ? `*Comentarios:* ${notes}` : null,
-  "────────────────",
-  "",
-  "Quedo a la espera de la confirmación. ¡Gracias!"
-]
-  .filter(line => line !== null)
-  .join("\n");
+      "Hola, ¿cómo están? Quisiera realizar un pedido:",
+      "",
+      ...itemLines,
+      "",
+      `*TOTAL: ${money(cartTotal())}*`,
+      "",
+      "────────────────",
+      `*Nombre:* ${name}`,
+      "────────────────",
+      `*Entrega:* ${delivery}`,
+      delivery === "Envío a domicilio"
+        ? `*Dirección:* ${address}`
+        : null,
+      "────────────────",
+      `*Pago:* ${payment}`,
+      notes ? `*Comentarios:* ${notes}` : null,
+      "────────────────",
+      "",
+      "Quedo a la espera de la confirmación. ¡Gracias!"
+    ]
+      .filter(line => line !== null)
+      .join("\n");
   }
 
   function validateOrder() {
@@ -993,24 +1102,41 @@
     showProductsView(true);
   });
 
-  elements.deliveryType.addEventListener("change", () => {
-    const needsAddress =
-      elements.deliveryType.value === "Envío a domicilio";
-
-    elements.addressLabel.hidden = !needsAddress;
-    elements.customerAddress.required = needsAddress;
-  });
+  elements.deliveryType.addEventListener(
+    "change",
+    updateDeliveryFields
+  );
 
   elements.orderForm.addEventListener("submit", event => {
     event.preventDefault();
 
     if (!validateOrder()) return;
 
+    const message = buildOrderText();
     const url =
       `https://wa.me/${config.whatsapp}` +
-      `?text=${encodeURIComponent(buildOrderText())}`;
+      `?text=${encodeURIComponent(message)}`;
 
+    savePreviousOrder(message);
     window.open(url, "_blank", "noopener");
+    clearCurrentOrder();
+    showToast("Pedido guardado y carrito vaciado");
+  });
+
+  elements.loadPreviousOrder.addEventListener(
+    "click",
+    restorePreviousOrder
+  );
+
+  elements.cancelOrder.addEventListener("click", () => {
+    const confirmed = window.confirm(
+      "¿Cancelar el pedido y vaciar todo el carrito?"
+    );
+
+    if (!confirmed) return;
+
+    clearCurrentOrder();
+    showToast("Pedido cancelado");
   });
 
   elements.copyOrder.addEventListener("click", async () => {
@@ -1269,6 +1395,7 @@
   loadFeaturedProducts();
   renderCategories();
   renderProducts();
+  updateDeliveryFields();
   renderCart();
   showProductsView(false);
 
@@ -1277,7 +1404,7 @@
     location.protocol.startsWith("http")
   ) {
     navigator.serviceWorker
-      .register("sw.js?v=13", { updateViaCache: "none" })
+      .register("sw.js?v=15", { updateViaCache: "none" })
       .then(registration => registration.update())
       .catch(() => {});
   }

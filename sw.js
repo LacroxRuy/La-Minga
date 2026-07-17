@@ -1,12 +1,12 @@
-const CACHE = "la-minga-whatsapp-preview-v14";
+const CACHE = "la-minga-pedido-anterior-v15";
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=13",
+  "./styles.css?v=15",
   "./config.js?v=12",
   "./productos.js?v=12",
-  "./app.js?v=13",
+  "./app.js?v=15",
   "./manifest.webmanifest",
   "./icon.svg",
   "./og-catalogo.png",

@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://lacroxruy.github.io/La-Minga/og-la-minga-v2.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
   <header class="topbar">
@@ -203,6 +203,9 @@
         <h3>Tu carrito está vacío</h3>
         <p>Agregá productos para comenzar el pedido.</p>
         <button class="secondary-button" id="continueShopping" type="button">Ver catálogo</button>
+        <button class="previous-order-button" id="loadPreviousOrder" type="button" hidden>
+          ↻ Cargar pedido anterior
+        </button>
       </div>
 
       <div id="checkoutArea" hidden>
@@ -258,7 +261,10 @@
             Enviar pedido por WhatsApp
           </button>
           <button class="copy-button" id="copyOrder" type="button">Copiar pedido</button>
-          <p class="form-note">WhatsApp abrirá el mensaje preparado. El cliente debe tocar “Enviar”.</p>
+          <button class="cancel-order-button" id="cancelOrder" type="button">Cancelar pedido</button>
+          <p class="form-note">
+            Al abrir WhatsApp, el pedido actual se guarda como “pedido anterior” y el carrito se vacía.
+          </p>
         </form>
       </div>
     </div>
@@ -268,7 +274,7 @@
 
   <script defer src="config.js?v=12"></script>
   <script defer src="productos.js?v=12"></script>
-  <script defer src="app.js?v=13"></script>
+  <script defer src="app.js?v=15"></script>
 
   <div class="image-viewer" id="imageViewer" hidden aria-hidden="true">
     <div class="image-viewer-backdrop" id="imageViewerBackdrop"></div>
