@@ -852,3 +852,9 @@ form input:focus, form select:focus, form textarea:focus { border-color: var(--g
     grid-column: auto;
   }
 }
+
+
+/* Corrección definitiva: cualquier elemento con hidden queda oculto. */
+html body [hidden] {
+  display: none !important;
+}

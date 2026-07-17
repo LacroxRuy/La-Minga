@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://lacroxruy.github.io/catalogo-la-minga/og-catalogo.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <header class="topbar">
@@ -91,13 +91,13 @@
         <p>Cargando novedades…</p>
       </div>
 
-      <div class="news-empty" id="newsEmpty" hidden>
+      <div class="news-empty" id="newsEmpty" hidden style="display:none">
         <span>🖼️</span>
         <h3>Todavía no hay novedades cargadas</h3>
         <p>Agregá archivos en la carpeta <b>imagenes-novedades</b>.</p>
       </div>
 
-      <div class="carousel-shell" id="carouselShell" hidden>
+      <div class="carousel-shell" id="carouselShell" hidden style="display:none">
         <button class="carousel-arrow carousel-prev" id="carouselPrev" type="button" aria-label="Novedad anterior">‹</button>
 
         <div class="carousel-viewport" id="carouselViewport">
@@ -107,7 +107,7 @@
         <button class="carousel-arrow carousel-next" id="carouselNext" type="button" aria-label="Novedad siguiente">›</button>
       </div>
 
-      <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar novedad"></div>
+      <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar novedad" style="display:none"></div>
 
       <div class="news-footer-action">
         <button class="primary-link hero-action-button" id="newsBackToProducts" type="button">
@@ -246,6 +246,6 @@
 
   <script src="config.js?v=5"></script>
   <script src="productos.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

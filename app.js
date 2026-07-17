@@ -324,9 +324,13 @@
 
   async function loadNoveltyImages() {
     elements.newsLoading.hidden = false;
+    elements.newsLoading.style.display = "grid";
     elements.newsEmpty.hidden = true;
+    elements.newsEmpty.style.display = "none";
     elements.carouselShell.hidden = true;
+    elements.carouselShell.style.display = "none";
     elements.carouselDots.hidden = true;
+    elements.carouselDots.style.display = "none";
     elements.newsCount.textContent = "";
 
     state.news = [];
@@ -346,12 +350,17 @@
 
     state.newsLoaded = true;
     elements.newsLoading.hidden = true;
+    elements.newsLoading.style.display = "none";
 
     if (!state.news.length) {
       elements.newsEmpty.hidden = false;
+      elements.newsEmpty.style.display = "grid";
       elements.newsCount.textContent = "0 imágenes";
       return;
     }
+
+    elements.newsEmpty.hidden = true;
+    elements.newsEmpty.style.display = "none";
 
     elements.newsCount.textContent =
       `${state.news.length} imagen${state.news.length === 1 ? "" : "es"}`;
@@ -387,7 +396,9 @@
     elements.carouselPrev.hidden = !multiple;
     elements.carouselNext.hidden = !multiple;
     elements.carouselDots.hidden = !multiple;
+    elements.carouselDots.style.display = multiple ? "flex" : "none";
     elements.carouselShell.hidden = false;
+    elements.carouselShell.style.display = "block";
 
     updateCarousel(false);
     startCarouselTimer();
@@ -800,7 +811,7 @@
     location.protocol.startsWith("http")
   ) {
     navigator.serviceWorker
-      .register("sw.js?v=5", { updateViaCache: "none" })
+      .register("sw.js?v=7", { updateViaCache: "none" })
       .then(registration => registration.update())
       .catch(() => {});
   }
